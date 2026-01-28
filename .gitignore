@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+backups/
+promos/
+tools/
+treasure_map_imgs/
+out_try/
+trace_*
+*.zip
+*.mp4
+*.mov
+*.mkv
