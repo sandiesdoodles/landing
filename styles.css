@@ -1,0 +1,763 @@
+:root{
+  --bg: #f7efe9;
+  --ink: #1f2933;
+  --muted: #6b7c86;
+
+  --peach: #f2a07f;
+  --peach2:#f5c2ac;
+  --teal: #4f7e8a;
+
+  --card: rgba(255,255,255,.68);
+  --stroke: rgba(17,24,39,.10);
+  --shadow: 0 18px 45px rgba(28,34,39,.10);
+  --radius: 26px;
+  --max: 1180px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 500px at 15% 5%, rgba(242,160,127,.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 10%, rgba(79,126,138,.12), transparent 55%),
+    linear-gradient(180deg, #fbf4ee 0%, var(--bg) 45%, #f8efe8 100%);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 22px 22px 60px;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.topbar{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 18px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  background:transparent;
+  border:0;
+}
+.brand img{
+  height: 96px;
+  width:auto;
+}
+.site-kicker{
+  font-size: 12px;
+  letter-spacing: .14em;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.navpill{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 10px 30px rgba(28,34,39,.07);
+  backdrop-filter: blur(8px);
+}
+.navpill a{
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 650;
+  color: #34424a;
+  opacity:.9;
+}
+.navpill a:hover{ opacity:1; background: rgba(255,255,255,.55); }
+.navpill .cta{
+  background: rgba(79,126,138,.16);
+  border: 1px solid rgba(79,126,138,.18);
+  opacity:1;
+}
+
+.hero{
+  margin-top: 8px;
+  display:flex;
+  justify-content:center;
+}
+.hero-media{
+  width: min(840px, 100%);
+  padding: 16px;
+}
+.hero-figure{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(0,0,0,.04);
+}
+.hero-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-img.is-fading{
+  opacity:.2;
+}
+.hero-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background: rgba(255,255,255,.90);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:12px;
+  font-weight:800;
+  color:#2f3a40;
+}
+.hero-caption{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top: 12px;
+  padding:12px 14px;
+  border-top:1px solid rgba(0,0,0,.06);
+}
+.hero-caption strong{display:block}
+.hero-caption span{display:block; font-size:12px; color: rgba(43,43,43,.70); margin-top:2px}
+.mini-link{font-weight:900; color: rgba(88,118,123,.95)}
+
+.section{margin-top:16px; padding:22px}
+.section-head h2{margin:0; font-size:24px; letter-spacing:-0.01em}
+.section-head p{margin:6px 0 0; color: rgba(43,43,43,.74); line-height:1.45}
+
+.grid2{margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.parent{
+  display:grid; grid-template-columns:92px 1fr; gap:14px;
+  padding:14px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.62);
+  border:1px solid rgba(0,0,0,.05);
+  align-items:center;
+}
+.pfp{
+  width:92px; height:92px; border-radius:999px; overflow:hidden;
+  border:3px solid rgba(255,255,255,.92);
+  box-shadow: 0 10px 22px rgba(0,0,0,.10);
+}
+.pfp img{width:100%; height:100%; object-fit:cover; display:block}
+.parent h3{margin:0 0 4px}
+.parent p{margin:0; color: rgba(43,43,43,.74); line-height:1.45}
+
+.split{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:16px}
+.bullets{margin:12px 0 0; padding-left:18px; color: rgba(43,43,43,.78)}
+.bullets li{margin:8px 0}
+.steps{margin:12px 0 0; padding-left:18px; color: rgba(43,43,43,.78)}
+.steps li{margin:8px 0}
+
+.note{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:18px;
+  background: rgba(88,118,123,.10);
+  border:1px solid rgba(88,118,123,.18);
+  font-weight:800;
+  font-size:13px;
+  color: rgba(43,43,43,.82);
+}
+.mini-note{margin-top:10px; font-size:12px; color: rgba(43,43,43,.66); font-weight:800}
+
+.footer{
+  margin-top:16px;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.muted{color: rgba(43,43,43,.72); margin-top:4px}
+
+@media (max-width: 960px){
+  .grid2{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .topbar{position:relative; top:auto}
+  .brand img{height:80px}
+  .hero-media{width:100%}
+}
+
+/* ==== Current litter moments: hard sizing lock ==== */
+.hero .hero-figure{
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background: rgba(0,0,0,.04) !important;
+}
+
+.hero .hero-img{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 8% !important; /* <-- keeps top faces visible */
+  display: block !important;
+}
+
+.hero .hero-badge{
+  position: absolute !important;
+  z-index: 3 !important;
+  top: 14px !important;
+  left: 14px !important;
+}
+
+/* === Current litter moments sizing fix === */
+.hero-figure{
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.hero-img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 18%; /* adjust 10%..35% if needed */
+}
+
+
+/* sd_autopatch_contactform */
+.contact-form{ margin-top: 14px; display: grid; gap: 12px; }
+.contact-row{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact-form label{ display: grid; gap: 6px; font-weight: 600; color: var(--ink); }
+.contact-form input, .contact-form select, .contact-form textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(31,41,51,.18);
+  background: #fff;
+  color: var(--ink);
+  font-weight: 500;
+}
+.contact-form textarea{ resize: vertical; }
+.contact-submit{
+  justify-self: start;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(31,41,51,.18);
+  background: rgba(255,255,255,.85);
+  cursor: pointer;
+  font-weight: 700;
+}
+.contact-note{ margin: 0; color: var(--muted); font-weight: 500; }
+@media (max-width: 820px){ .contact-row{ grid-template-columns: 1fr; } }
+
+
+/* sd_autopatch_pupgrid:start */
+.hero-figure{ display:none !important; }
+.hero-caption, .hero-caption-row{ display:none !important; }
+/* Keep badge optional; hide just the hero one if it exists as .badge inside hero card */
+.hero-card .badge{ display:none !important; }
+
+.pupgrid-wrap{ padding: 10px 0 0; }
+.pupgrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px){
+  .pupgrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px){
+  .pupgrid{ grid-template-columns: 1fr; }
+}
+.pupcard{
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+.pupimg{
+  width: 100%;
+  height: 220px;
+  display:block;
+  object-fit: cover;
+  background: #f3f3f3;
+}
+.pupmeta{
+  padding: 10px 12px 12px;
+}
+.pupname{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+/* sd_autopatch_pupgrid:end */
+
+
+/* sd_autopatch_pupgrid_v6:start */
+.pupgrid-wrap{ margin-top: 12px; }
+
+.pupgrid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.pupcard{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.pupimg{
+  width:100%;
+  height:220px;
+  display:block;
+  object-fit:cover;
+  background:#f2f2f2;
+}
+
+.pupmeta{ padding: 10px 12px 12px; }
+.pupname{ font-weight:800; letter-spacing:.2px; }
+
+/* vertical mode (one per row) */
+.pupgrid-vertical{
+  display:flex;
+  flex-direction:column;
+}
+.pupgrid-vertical .pupimg{ height: 260px; }
+
+/* responsive: leave your other grids alone if used elsewhere */
+@media (max-width: 900px){
+  .pupgrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px){
+  .pupgrid{ grid-template-columns: 1fr; }
+}
+/* sd_autopatch_pupgrid_v6:end */
+
+
+/* sd_hide_how_v1:start */
+/* Hide the How-it-works card and let puppies take the full row */
+#how{ display:none !important; }
+#puppies{ grid-column: 1 / -1; }
+
+/* Clean up the puppy card presentation */
+.pupgrid-vertical{ gap: 14px; }
+.pupgrid-vertical .pupimg{ height: 220px; object-position: 50% 35%; }
+.pupcard{ border-radius: 18px; }
+.pupmeta{ padding: 10px 12px 12px; }
+.pupname{ font-weight: 850; }
+/* sd_hide_how_v1:end */
+
+/* sd_pupgrid_center_smaller_v1:start */
+/* Center the Available Puppies card + make it a bit narrower */
+#puppies{
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 860px;   /* smaller = more centered look */
+}
+
+/* Tighten the vertical puppy cards */
+.pupgrid-vertical{ gap: 12px; }
+.pupgrid-vertical .pupimg{
+  height: 190px;      /* smaller than before */
+  object-position: 50% 35%;
+}
+.pupmeta{ padding: 8px 12px 10px; }
+.pupname{ font-size: 18px; }
+/* sd_pupgrid_center_smaller_v1:end */
+
+/* sd_available_puppies_tight_center_v2:start */
+
+/* Hide How it works block for now (it has #how based on your anchors) */
+#how{ display:none !important; }
+
+/* Center + tighten the Available Puppies section */
+#puppies{
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  max-width: 720px;          /* tighter + more centered */
+}
+
+/* If #puppies lives in a grid row, make it span full row and center */
+#puppies{ grid-column: 1 / -1; justify-self:center; }
+
+/* Theme colors (uses your vars if present; falls back to logo-ish teal/coral) */
+#puppies h2{
+  color: var(--brand-teal, var(--accent, #3b7284));
+  letter-spacing: .2px;
+}
+#puppies .pupname{
+  color: var(--brand-coral, #e07a72);
+  font-weight: 800;
+}
+
+/* Make the vertical puppy cards cleaner */
+.pupgrid-vertical{ gap: 12px; }
+.pupgrid-vertical .pupcard{
+  border-radius: 22px;
+  overflow: hidden;
+}
+.pupgrid-vertical .pupimg{
+  height: 160px;             /* smaller */
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  display:block;
+  background:#fff;
+}
+.pupmeta{
+  padding: 10px 14px 12px;
+}
+.pupmeta .pupname{
+  font-size: 18px;
+  margin: 0;
+}
+
+/* sd_available_puppies_tight_center_v2:end */
+
+/* sd_available_puppies_grid2_v1:start */
+
+/* Hide How it works for now */
+#how{ display:none !important; }
+
+/* Available Puppies section: centered + tighter */
+#puppies{
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+  max-width: 920px;
+}
+#puppies .section-title{
+  text-align:center;
+  color: var(--brand-teal, var(--accent, #3b7284));
+  margin-bottom: 14px;
+  letter-spacing: .2px;
+}
+
+/* 2 columns, 3 rows */
+.ap-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 18px;
+  align-items: start;
+}
+
+/* Card styling */
+.ap-card{
+  background: rgba(255,255,255,0.68);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 22px;
+  overflow:hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Name above image */
+.ap-name{
+  margin: 14px 16px 10px;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--brand-coral, #e07a72);
+  font-weight: 900;
+  text-align:center;
+}
+
+/* Image */
+.ap-frame{ overflow:hidden; }
+.ap-img{
+  width: 100%;
+  height: 220px;          /* “bit smaller” but still strong */
+  object-fit: cover;
+  object-position: 50% 35%;
+  display:block;
+  background:#fff;
+  transition: opacity 180ms ease;
+}
+
+/* Bio box under each */
+.ap-bio{
+  padding: 12px 16px 16px;
+  color: var(--ink, #1f2933);
+  font-size: 14px;
+  line-height: 1.35;
+  background: rgba(255,255,255,0.55);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Mobile: stack to 1 column */
+@media (max-width: 780px){
+  .ap-grid{ grid-template-columns: 1fr; }
+  .ap-img{ height: 200px; }
+}
+
+/* sd_available_puppies_grid2_v1:end */
+
+
+/* sd_autopatch_header_v1:start */
+
+/* Bigger logo/wordmark (covers both image and text logos) */
+img.logo, img.brand-logo, .brand img, .logo img{
+  height: 108px;
+  width: auto;
+}
+.logo, .brand, .wordmark, .logo-wordmark, .logo-text{
+  font-size: clamp(48px, 6vw, 84px);
+  line-height: 1;
+}
+
+/* Tagline: match theme, cleaner */
+.tagline, .kicker, .subhead{
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #3a7684;
+}
+
+/* Contact button under nav */
+.nav-cta-row{
+  display:flex;
+  justify-content:center;
+  margin-top: 12px;
+}
+.contact-now-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  background: #e67f6f;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.contact-now-btn:hover{ filter: brightness(.96); }
+.contact-now-btn:active{ transform: translateY(1px); }
+
+/* sd_autopatch_header_v1:end */
+
+
+/* sd_autopatch_header_v3:start */
+
+/* Kicker: match theme (teal) + clean caps */
+.sd_header_v3 .site-kicker{
+  color:#3a7684;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+/* Contact Now button under nav */
+.sd_header_v3 .nav-cta-row{
+  display:flex;
+  justify-content:center;
+  margin-top: 10px;
+}
+.sd_header_v3 .contact-now-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  background:#e67f6f; /* coral like DOODLES */
+  color:#fff;
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
+}
+.sd_header_v3 .contact-now-btn:hover{ filter:brightness(.97); }
+.sd_header_v3 .contact-now-btn:active{ transform:translateY(1px); }
+
+/* Logo bigger (safe multi-selector bump) */
+.sd_header_v3 .site-logo,
+.sd_header_v3 .brand,
+.sd_header_v3 .logo,
+.sd_header_v3 .wordmark,
+.sd_header_v3 .site-title,
+.sd_header_v3 header h1{
+  transform: scale(1.10);
+  transform-origin: center top;
+}
+
+/* sd_autopatch_header_v3:end */
+
+
+/* sd_autopatch_pawfix_v1:start */
+
+/* Prevent paw/logo overlap into kicker after transform scaling */
+.sd_header_v3 .site-kicker{
+  margin-top: 18px !important;
+  padding-top: 2px;
+}
+
+/* Keep header spacing feeling intentional */
+.sd_header_v3 .nav-cta-row{
+  margin-top: 12px;
+}
+
+/* sd_autopatch_pawfix_v1:end */
+
+
+/* sd_autopatch_menu_off_cta_v1:start */
+
+/* If any nav row still exists, hide it */
+.site-nav, nav.site-nav, /* Put Contact Now under Available Puppies title */
+.pups-cta-wrap{
+  display:flex;
+  justify-content:center;
+  margin: 10px 0 18px 0;
+}
+.pups-cta-wrap a{
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+
+/* sd_autopatch_menu_off_cta_v1:end */
+
+
+/* sd_autopatch_nav */
+.pill-nav{
+  display:inline-flex;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  margin-top: 10px;
+}
+.pill-nav a{
+  text-decoration:none;
+  font-weight:600;
+  color: var(--ink);
+  padding:10px 14px;
+  border-radius:999px;
+}
+.pill-nav a:hover{
+  background: rgba(31,41,51,.06);
+}
+
+
+/* sd_autopatch_nav_v3 */
+.pill-nav{
+  display:inline-flex;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.70);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  margin-top: 10px;
+  align-items:center;
+  justify-content:center;
+}
+.pill-nav a{
+  display:inline-flex;            /* <-- force visible */
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-weight:600;
+  font-size: 16px;               /* <-- force non-zero */
+  color: var(--ink);
+  padding:10px 14px;
+  border-radius:999px;
+}
+.pill-nav a:hover{
+  background: rgba(31,41,51,.06);
+}
+
+
+
+/* If it’s the rounded pill but has no content, hide it */
+.container > div:has(> :is(.pill, .rounded, .card)){}
+/* broad, safe: hide empty "rounded bar" elements */
+div[aria-hidden="true"],
+div:empty{
+  display:none !important;
+}
+
+/* common pattern: a big rounded bar with no text */
+.rounded-bar,
+.rounded-pill,
+.soft-bar{
+  display:none !important;
+}
+
+
+/* sd_autopatch_remove_white_block */
+.spacer,
+.header-spacer,
+.top-spacer,
+.hero-spacer{
+  display:none !important;
+}
+
+/* If it’s the rounded pill but has no content, hide it */
+.container > div:has(> :is(.pill, .rounded, .card)){}
+/* broad, safe: hide empty "rounded bar" elements */
+div[aria-hidden="true"],
+div:empty{
+  display:none !important;
+}
+
+/* common pattern: a big rounded bar with no text */
+.rounded-bar,
+.rounded-pill,
+.soft-bar{
+  display:none !important;
+}
+
+/* sd_nav_contact_patch_v1:start */
+/* Pull content up by removing the now-empty hero card area */
+.hero-media{ display:none !important; }
+
+/* Clean header spacing */
+.pill-nav{ margin-top: 12px; }
+.header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 28px; }
+
+/* Reuse existing button styles if any, but ensure it looks right */
+.header-cta .cta-btn{
+  display:inline-block;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:999px;
+  padding:12px 22px;
+}
+/* sd_nav_contact_patch_v1:end */
+
+/* sd_fix_contact_under_menu_v1:start */
+/* If a Contact link is STILL in the menu for any reason, hide it */
+.pill-nav a[href="#contactForm"]{ display:none !important; }
+
+/* Put Contact Now under the menu, centered */
+.nav-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 28px; }
+
+/* Tighten the big empty space above the puppies section */
+.hero{ min-height: auto !important; padding-bottom: 24px !important; }
+/* sd_fix_contact_under_menu_v1:end */
+

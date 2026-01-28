@@ -11,3 +11,27 @@ trace_*
 *.mp4
 *.mov
 *.mkv
+
+# local junk / large stuff
+styles.css_dir_bad/
+tools/
+backups/
+promos/
+out_try/
+trace_*
+*.zip
+*.mp4
+*.mov
+*.mkv
+
+# local junk / large stuff
+styles.css_dir_bad/
+tools/
+backups/
+promos/
+out_try/
+trace_*
+*.zip
+*.mp4
+*.mov
+*.mkv
