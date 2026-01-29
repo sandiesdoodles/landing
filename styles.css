@@ -761,3 +761,7 @@ div:empty{
 /* === Hide hero "Current litter moments" section (match desired layout) === */
 .hero-media { display: none !important; }
 .hero { min-height: auto !important; padding-bottom: 0 !important; }
+
+/* === Tighten top area now that hero + top CTA are gone === */
+.hero { padding-top: 0 !important; padding-bottom: 0 !important; min-height: 0 !important; }
+.hero-spacer { display: none !important; height: 0 !important; margin: 0 !important; padding: 0 !important; }
