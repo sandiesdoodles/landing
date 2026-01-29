@@ -774,3 +774,10 @@ div:empty{
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* === Remove the remaining "hero takes a whole screen" behavior === */
+.hero{
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
