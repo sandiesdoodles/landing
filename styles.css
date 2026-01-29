@@ -755,7 +755,7 @@ div:empty{
 .pill-nav a[href="#contactForm"]{ display:none !important; }
 
 /* Put Contact Now under the menu, centered */
-.nav-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 28px; }
+.nav-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 18px; }
 
 /* Tighten the big empty space above the puppies section */
 .hero{ min-height: auto !important; padding-bottom: 24px !important; }
