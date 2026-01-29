@@ -757,3 +757,7 @@ div:empty{
 .hero{ min-height: auto !important; padding-bottom: 24px !important; }
 /* sd_fix_contact_under_menu_v1:end */
 
+
+/* === Hide hero "Current litter moments" section (match desired layout) === */
+.hero-media { display: none !important; }
+.hero { min-height: auto !important; padding-bottom: 0 !important; }
