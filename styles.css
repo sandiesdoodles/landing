@@ -734,7 +734,7 @@ div:empty{
 /* Pull content up by removing the now-empty hero card area */
 /* Clean header spacing */
 .pill-nav{ margin-top: 12px; }
-.header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 8px; }
+.header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 0px; }
 
 /* Reuse existing button styles if any, but ensure it looks right */
 .header-cta .cta-btn{
@@ -765,3 +765,12 @@ div:empty{
 /* === Tighten top area now that hero + top CTA are gone === */
 .hero { padding-top: 0 !important; padding-bottom: 0 !important; min-height: 0 !important; }
 .hero-spacer { display: none !important; height: 0 !important; margin: 0 !important; padding: 0 !important; }
+
+/* === Force top-align content now that hero media is removed === */
+.hero{
+  display:block !important;
+  justify-content:flex-start !important;
+  align-items:stretch !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
