@@ -277,8 +277,6 @@ img{ max-width:100%; display:block; }
 
 
 /* sd_autopatch_pupgrid:start */
-.hero-figure{ display:none !important; }
-.hero-caption, .hero-caption-row{ display:none !important; }
 /* Keep badge optional; hide just the hero one if it exists as .badge inside hero card */
 .hero-card .badge{ display:none !important; }
 
@@ -734,8 +732,6 @@ div:empty{
 
 /* sd_nav_contact_patch_v1:start */
 /* Pull content up by removing the now-empty hero card area */
-.hero-media{ display:none !important; }
-
 /* Clean header spacing */
 .pill-nav{ margin-top: 12px; }
 .header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 28px; }
