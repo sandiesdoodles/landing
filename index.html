@@ -201,36 +201,7 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    const hero = document.getElementById('heroSlide');
-    
-    const frame = hero ? hero.closest(".hero-figure") : null;
-    const setBg = (url) => { if (frame) frame.style.setProperty("--hero-bg", `url("${url}")`); };
-    if (hero) setBg(hero.getAttribute("src") || hero.src);
-if (hero) {
-      const slides = [
-        "assets/curated/current-litter/slide_01.jpg?v=curated_final2",
-        "assets/curated/current-litter/slide_02.jpg?v=curated_final2"
-        "assets/curated/current-litter/slide_03.jpg?v=curated_final2",
-        "assets/curated/current-litter/slide_04.jpg?v=curated_final2"
-        "assets/curated/current-litter/slide_05.jpg?v=curated_final2",
-        "assets/curated/current-litter/slide_06.jpg?v=curated_final2"
-        "assets/curated/current-litter/slide_07.jpg?v=curated_final2",
-        "assets/curated/current-litter/slide_08.jpg?v=curated_final2"
-        "assets/curated/current-litter/slide_09.jpg?v=curated_final2",
-        "assets/curated/current-litter/slide_10.jpg?v=curated_final2"
-      ];
-      let idx = 0;
-      setInterval(() => {
-        idx = (idx + 1) % slides.length;
-        hero.classList.add('is-fading');
-        setTimeout(() => {
-          setBg(slides[idx]);
-          hero.src = slides[idx];
-          hero.classList.remove('is-fading');
-        }, 300);
-      }, 4500);
-    }
-  </script>
+</script>
 <script>
 function sdMailto(e){
   e.preventDefault();
