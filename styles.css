@@ -150,7 +150,7 @@ img{ max-width:100%; display:block; }
 .hero-caption span{display:block; font-size:12px; color: rgba(43,43,43,.70); margin-top:2px}
 .mini-link{font-weight:900; color: rgba(88,118,123,.95)}
 
-.section{margin-top:16px; padding:22px}
+.section{margin-top:0px; padding:22px}
 .section-head h2{margin:0; font-size:24px; letter-spacing:-0.01em}
 .section-head p{margin:6px 0 0; color: rgba(43,43,43,.74); line-height:1.45}
 
@@ -647,7 +647,7 @@ img.logo, img.brand-logo, .brand img, .logo img{
   background: rgba(255,255,255,.65);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 30px rgba(0,0,0,.06);
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .pill-nav a{
   text-decoration:none;
@@ -734,7 +734,7 @@ div:empty{
 /* Pull content up by removing the now-empty hero card area */
 /* Clean header spacing */
 .pill-nav{ margin-top: 12px; }
-.header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 28px; }
+.header-cta{ display:flex; justify-content:center; margin-top: 14px; margin-bottom: 8px; }
 
 /* Reuse existing button styles if any, but ensure it looks right */
 .header-cta .cta-btn{
