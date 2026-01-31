@@ -815,3 +815,9 @@ div:empty{
   object-fit: cover;
   display: block;
 }
+
+/* DAISY FIT OVERRIDE */
+#ap_Daisy{
+  object-fit: contain !important;   /* zooms OUT vs cover */
+  background: #fff !important;      /* bars look clean */
+}
