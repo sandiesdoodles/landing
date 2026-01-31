@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sandies Doodles</title>
   <meta name="description" content="Family-raised doodles focused on temperament, health, and early socialization." />
-  <link rel="stylesheet" href="styles.css?v=1769882971" />
+  <link rel="stylesheet" href="styles.css?v=1769883871" />
   <link rel="stylesheet" href="tweaks.css?v=1" />
 </head>
 <body class="sd_header_v3">
@@ -43,7 +43,7 @@
       <article class="ap-card" data-pup="Cosmos">
         <h3 class="ap-name">Cosmos</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1769883394" alt="Cosmos puppy" loading="lazy">
+          <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1769883871" alt="Cosmos puppy" loading="lazy">
         </div>
         <div class="ap-bio">Sweet, curious, and people-focused. Calm cuddler with a playful streak.</div>
       </article>
@@ -51,7 +51,7 @@
       <article class="ap-card" data-pup="Jasper">
         <h3 class="ap-name">Jasper</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1769883394" alt="Jasper puppy" loading="lazy">
+          <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1769883871" alt="Jasper puppy" loading="lazy">
         </div>
         <div class="ap-bio">Confident explorer. Loves attention and follows you like a tiny shadow.</div>
       </article>
@@ -59,7 +59,7 @@
       <article class="ap-card" data-pup="Lilly">
         <h3 class="ap-name">Lilly</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1769883394" alt="Lilly puppy" loading="lazy">
+          <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1769883871" alt="Lilly puppy" loading="lazy">
         </div>
         <div class="ap-bio">Gentle snuggler. Soft temperament and very calm when handled.</div>
       </article>
@@ -67,7 +67,7 @@
       <article class="ap-card" data-pup="Ivy">
         <h3 class="ap-name">Ivy</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1769883394" alt="Ivy puppy" loading="lazy">
+          <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1769883871" alt="Ivy puppy" loading="lazy">
         </div>
         <div class="ap-bio">Bright-eyed and bold. Quick learner with a friendly, outgoing vibe.</div>
       </article>
@@ -75,7 +75,7 @@
       <article class="ap-card" data-pup="Willow">
         <h3 class="ap-name">Willow</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1769883394" alt="Willow puppy" loading="lazy">
+          <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1769883871" alt="Willow puppy" loading="lazy">
         </div>
         <div class="ap-bio">Chill and cozy. Happy to nap, then pop up for playtime.</div>
       </article>
@@ -83,7 +83,7 @@
       <article class="ap-card" data-pup="Daisy">
         <h3 class="ap-name">Daisy</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Daisy" src="assets/pup_slides/daisy_01.jpg?v=1769883394" alt="Daisy puppy" loading="lazy">
+          <img class="ap-img" id="ap_Daisy" src="assets/pup_slides/daisy_01.jpg?v=1769883871" alt="Daisy puppy" loading="lazy">
         </div>
         <div class="ap-bio">Affectionate and silly. Loves cuddles and being in the middle of everything.</div>
       </article>
@@ -210,58 +210,9 @@ function sdMailto(e){
 
 
 <!-- sd_autopatch_pupgrid_v6:script -->
-<script>
-(function(){
-  const cards = document.querySelectorAll('.pupcard[data-slides]');
-  cards.forEach((card, idx) => {
-    const img = card.querySelector('img');
-    let slides = [];
-    try { slides = JSON.parse(card.getAttribute('data-slides') || '[]'); } catch(e){}
-    if (!img || slides.length < 2) return;
-
-    let i = 0, paused = false;
-    card.addEventListener('mouseenter', () => paused = true);
-    card.addEventListener('mouseleave', () => paused = false);
-
-    const startDelay = 250 + (idx * 180);
-    setTimeout(() => {
-      setInterval(() => {
-        if (paused) return;
-        i = (i + 1) % slides.length;
-        img.src = slides[i];
-      }, 2400);
-    }, startDelay);
-  });
-})();
-</script>
+<!-- Pup card rotator removed: static images only -->
 <!-- sd_autopatch_pupgrid_v6:script:end -->
 
-<script>
-/* sd_available_puppies_grid2_v1:start */
-(() => {
-  const slides = SD_PUPS;
-  const intervalMs = 2600;
-
-  Object.keys(slides).forEach((name, idx) => {
-    const el = document.getElementById(`ap_${name}`);
-    if (!el) return;
-    const arr = slides[name];
-    let i = 0;
-
-    const tick = () => {
-      i = (i + 1) % arr.length;
-      el.style.opacity = "0";
-      setTimeout(() => {
-        el.src = arr[i];
-        el.style.opacity = "1";
-      }, 140);
-    };
-
-    // stagger start so they don't all flip at once
-    setTimeout(() => setInterval(tick, intervalMs), idx * 380);
-  });
-})();
-/* sd_available_puppies_grid2_v1:end */
-</script>
+<!-- Pup card rotator removed: static images only -->
 </body>
 </html>

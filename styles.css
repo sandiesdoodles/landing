@@ -788,3 +788,10 @@ div:empty{
   min-height: 0 !important;
   max-height: none !important;
 }
+
+/* === Stop puppy card flicker (no animations/transitions) === */
+.ap-img,
+.ap-img.is-fading{
+  animation: none !important;
+  transition: none !important;
+}
