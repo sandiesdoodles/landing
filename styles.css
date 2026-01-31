@@ -821,3 +821,19 @@ div:empty{
   object-fit: contain !important;   /* zooms OUT vs cover */
   background: #fff !important;      /* bars look clean */
 }
+
+/* === Puppy card image sizing (consistent, no weird crop differences) === */
+.ap-img{
+  width: 100% !important;
+  height: 260px !important;        /* change this to 240/280 if you want */
+  object-fit: cover !important;    /* use cover so Daisy/Lilly don't look tiny */
+  object-position: center !important;
+  display: block !important;
+  background: #ffffff !important;
+}
+
+/* If any single photo needs a little "zoom out", switch JUST that one to contain */
+#ap_Lilly{
+  object-fit: contain !important;  /* makes Lilly show more (less zoomed-in) */
+  background: #ffffff !important;
+}
