@@ -795,3 +795,14 @@ div:empty{
   animation: none !important;
   transition: none !important;
 }
+
+/* === Puppy card images: consistent sizing === */
+.ap-img{
+  display:block !important;
+  width:100% !important;
+  aspect-ratio: 4 / 3 !important;   /* consistent card height */
+  height:auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transition: none !important;      /* no flicker even if something tries */
+}
