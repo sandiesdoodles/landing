@@ -20,6 +20,24 @@
 </style>
 
 <style id="puppySizingFix">
+
+/* tighten header -> puppies gap (more aggressive) */
+#puppies{
+  padding-top: 0 !important;
+  margin-top: -36px;              /* pulls section upward */
+  scroll-margin-top: 110px;       /* keeps Puppies tab scroll landing nicely */
+}
+#puppies .ap-title,
+#puppies h2{
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+#puppies .ap-cta,
+#puppies .contact-btn{
+  margin-top: 6px !important;
+  margin-bottom: 14px !important;
+}
+
 /* Force all puppy card images to be the same size and fill the box */
 .ap-img{
   width:100% !important;
