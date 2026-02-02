@@ -9,19 +9,8 @@
   <link rel="stylesheet" href="tweaks.css?v=1" />
 <style>
 /* FORCE all puppy card images to fill the same frame */
-.ap-img{
-  width: 100% !important;
-  height: 280px !important;     /* change to 260/300 if you want */
-  display: block !important;
-  margin: 0 !important;
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover !important; /* removes the “tiny centered” look */
-  object-position: 50% 35% !important;
-}
-
 /* Small per-pup framing tweaks */
-#ap_Daisy{ object-position: 50% 25% !important; }  /* shows a bit more (less “zoom”) */
+/* shows a bit more (less “zoom”) */
 #ap_Lilly{ object-position: 50% 30% !important; }
 </style>
 
@@ -112,8 +101,7 @@
       <article class="ap-card" data-pup="Daisy">
         <h3 class="ap-name">Daisy (Sold)</h3>
         <div class="ap-frame">
-          <img class="ap-img" id="ap_Daisy" src="assets/pup_slides/daisy_01.jpg?v=1770009078" alt="Daisy puppy" loading="lazy">
-        </div>
+</div>
         <div class="ap-bio">Affectionate and silly. Loves cuddles and being in the middle of everything.</div>
       </article>
   </div>
@@ -246,7 +234,6 @@ function sdMailto(e){
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
   document.getElementById('ap_Daisy')?.closest('.ap-card')?.remove();
-  const img=document.getElementById("ap_Daisy");
   if(!img) return;
   const card=img.closest(".ap-card");
   if(!card) return;
