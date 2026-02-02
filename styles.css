@@ -837,3 +837,29 @@ div:empty{
   object-fit: contain !important;  /* makes Lilly show more (less zoomed-in) */
   background: #ffffff !important;
 }
+
+/* --- Puppy cards: lock image sizing (override older rules) --- */
+.ap-img{
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: 50% 30% !important;
+  display: block !important;
+}
+
+/* Slight per-pup tweaks (helps “zoom out” feeling without breaking the grid) */
+#ap_Lilly{ object-position: 50% 22% !important; }
+#ap_Daisy{ object-position: 50% 25% !important; }
+
+/* SOLD badge */
+.sold-pill{
+  display:inline-block;
+  margin-left:10px;
+  padding:3px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  background:#ffe9ea;
+  color:#c55;
+}
+.ap-card.is-sold .ap-img{ opacity:0.92; filter: grayscale(10%); }
