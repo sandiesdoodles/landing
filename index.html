@@ -7,6 +7,23 @@
   <meta name="description" content="Family-raised doodles focused on temperament, health, and early socialization." />
   <link rel="stylesheet" href="styles.css?v=1769893550" />
   <link rel="stylesheet" href="tweaks.css?v=1" />
+<style>
+/* FORCE all puppy card images to fill the same frame */
+.ap-img{
+  width: 100% !important;
+  height: 280px !important;     /* change to 260/300 if you want */
+  display: block !important;
+  margin: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important; /* removes the “tiny centered” look */
+  object-position: 50% 35% !important;
+}
+
+/* Small per-pup framing tweaks */
+#ap_Daisy{ object-position: 50% 25% !important; }  /* shows a bit more (less “zoom”) */
+#ap_Lilly{ object-position: 50% 30% !important; }
+</style>
 </head>
 <body class="sd_header_v3">
   <div class="bg"></div>
