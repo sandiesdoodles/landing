@@ -180,8 +180,8 @@
         <div class="ap-bio">Chill and cozy. Happy to nap, then pop up for playtime.</div>
       </article>
 
-      <article class="ap-card" data-pup="Daisy">
-        <h3 class="ap-name">Daisy (Sold)</h3>
+      <article class="ap-card" data-pup="">
+        <h3 class="ap-name">(Sold)</h3>
         <div class="ap-frame">
 </div>
         <div class="ap-bio">Affectionate and silly. Loves cuddles and being in the middle of everything.</div>
@@ -262,7 +262,7 @@
   </div>
 
   <label>Puppy name (optional)
-    <input name="puppy" placeholder="Cosmos, Daisy, Jasper…">
+    <input name="puppy" placeholder="Cosmos, Jasper…">
   </label>
 
   <label>Message
@@ -318,14 +318,13 @@ function sdMailto(e){
 <!-- Pup card rotator removed: static images only -->
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
-  document.getElementById('ap_Daisy')?.closest('.ap-card')?.remove();
-  if(!img) return;
+if(!img) return;
   const card=img.closest(".ap-card");
   if(!card) return;
   card.classList.add("is-sold");
   const name=card.querySelector(".ap-name");
   if(name && !name.querySelector(".sold-pill")){
-    name.textContent="Daisy";
+    name.textContent="";
     const pill=document.createElement("span");
     pill.className="sold-pill";
     pill.textContent="Sold";
