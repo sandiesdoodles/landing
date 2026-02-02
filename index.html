@@ -24,6 +24,18 @@
 #ap_Daisy{ object-position: 50% 25% !important; }  /* shows a bit more (less “zoom”) */
 #ap_Lilly{ object-position: 50% 30% !important; }
 </style>
+
+<style id="puppySizingFix">
+/* Force all puppy card images to be the same size and fill the box */
+.ap-img{
+  width:100% !important;
+  height:260px !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+</style>
+
 </head>
 <body class="sd_header_v3">
   <div class="bg"></div>
@@ -233,6 +245,7 @@ function sdMailto(e){
 <!-- Pup card rotator removed: static images only -->
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
+  document.getElementById('ap_Daisy')?.closest('.ap-card')?.remove();
   const img=document.getElementById("ap_Daisy");
   if(!img) return;
   const card=img.closest(".ap-card");
