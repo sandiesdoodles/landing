@@ -863,3 +863,21 @@ div:empty{
   color:#c55;
 }
 .ap-card.is-sold .ap-img{ opacity:0.92; filter: grayscale(10%); }
+
+/* --- FORCE consistent puppy card image sizing (wins over older rules) --- */
+.ap-card img{
+  width: 100% !important;
+  max-width: none !important;
+  height: 260px !important;     /* adjust 240-300 if you want */
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;  /* this is what removes the “tiny centered” look */
+  object-position: 50% 30% !important;
+}
+
+/* Per-pup tweak: Daisy shows a little more (feels “zoomed out”) */
+#ap_Daisy{ object-position: 50% 40% !important; }
+
+/* Lilly: show a bit more body, less face-crop */
+#ap_Lilly{ object-position: 50% 35% !important; }
+
