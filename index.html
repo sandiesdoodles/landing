@@ -174,7 +174,9 @@
       <div class="muted">© <span id="y"></span> Sandies Doodles</div>
     
 
-<form class="contact-form" id="contactForm" onsubmit="return sdMailto(event)">
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/XXXXYYYY" method="POST">
+  <input type="hidden" name="_subject" value="Sandies Doodles website inquiry">
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
   <div class="contact-row">
     <label>Name
       <input name="name" autocomplete="name" required>
