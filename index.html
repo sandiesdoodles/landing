@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sandies Doodles</title>
   <meta name="description" content="Family-raised doodles focused on temperament, health, and early socialization." />
-  <link rel="stylesheet" href="styles.css?v=1770271753" />
+  <link rel="stylesheet" href="styles.css?v=1769893550" />
   <link rel="stylesheet" href="tweaks.css?v=1" />
 <style>
 /* FORCE all puppy card images to fill the same frame */
@@ -140,6 +140,46 @@
 </div>
   <div class="ap-grid">
 
+      <article class="ap-card" data-pup="Cosmos">
+        <h3 class="ap-name">Cosmos</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1770009078" alt="Cosmos puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Sweet, curious, and people-focused. Calm cuddler with a playful streak.</div>
+      </article>
+
+      <article class="ap-card" data-pup="Jasper">
+        <h3 class="ap-name">Jasper</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1770009078" alt="Jasper puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Confident explorer. Loves attention and follows you like a tiny shadow.</div>
+      </article>
+
+      <article class="ap-card" data-pup="Lilly">
+        <h3 class="ap-name">Lilly</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1770009078" alt="Lilly puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Gentle snuggler. Soft temperament and very calm when handled.</div>
+      </article>
+
+      <article class="ap-card" data-pup="Ivy">
+        <h3 class="ap-name">Ivy</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1770009078" alt="Ivy puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Bright-eyed and bold. Quick learner with a friendly, outgoing vibe.</div>
+      </article>
+
+      <article class="ap-card" data-pup="Willow">
+        <h3 class="ap-name">Willow</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1770009078" alt="Willow puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Chill and cozy. Happy to nap, then pop up for playtime.</div>
+      </article>
+
       </div>
 </section>
 
@@ -186,11 +226,10 @@
         <div class="muted">Instagram: @SandieDoodles1</div>
         <div class="muted">Location: Hobe Sound, Florida</div>
       </div>
+      <div class="muted">© <span id="y"></span> Sandies Doodles</div>
     
 
 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykpbwkg" method="POST">
-  <div class="contact-quick"><span>Call/Text:</span> <a href="tel:+17725307433">(772) 530-7433</a></div>
-
   <input type="hidden" name="_subject" value="Sandies Doodles website inquiry">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
   <div class="contact-row">
@@ -226,7 +265,7 @@
 
   <button class="contact-submit" type="submit">Send message</button>
 </form>
-<div class="footer-copy">© <span id="year"></span> Sandies Doodles</div>
+
 </footer>
   </div>
 
@@ -234,6 +273,29 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 <script>
+function sdMailto(e){
+  e.preventDefault();
+  const f = e.target;
+  const v = (n) => (f.elements[n]?.value || "").trim();
+  const type = v("type") || "General question";
+  const subject = encodeURIComponent("SandiesDoodles inquiry: " + type);
+  const body = encodeURIComponent(
+    "Name: " + v("name") + "
+" +
+    "Email: " + v("email") + "
+" +
+    "Phone: " + v("phone") + "
+" +
+    "Puppy: " + v("puppy") + "
+
+" +
+    "Message:
+" + v("message") + "
+"
+  );
+
+  return false;
+}
 </script>
 
 <!-- sd_autopatch_pupgrid:script -->
@@ -250,13 +312,13 @@
 <!-- Pup card rotator removed: static images only -->
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
-if(!img) return;
+  if(!img) return;
   const card=img.closest(".ap-card");
   if(!card) return;
   card.classList.add("is-sold");
   const name=card.querySelector(".ap-name");
   if(name && !name.querySelector(".sold-pill")){
-    name.textContent="";
+    name.textContent="Daisy";
     const pill=document.createElement("span");
     pill.className="sold-pill";
     pill.textContent="Sold";
@@ -264,6 +326,5 @@ if(!img) return;
   }
 });
 </script>
-<script>var y=document.getElementById('year'); if(y){y.textContent=new Date().getFullYear();}</script>
 </body>
 </html>
