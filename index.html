@@ -139,12 +139,27 @@
 <div class="pups-cta-wrap"><a class="contact-now-btn" href="#contactForm">Contact Now</a>
 </div>
   <div class="ap-grid">
-
-      <article class="ap-card" data-pup="Cosmos">
-        <h3 class="ap-name">Cosmos</h3>
-        <div class="ap-frame">
-          <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1770009078" alt="Cosmos puppy" loading="lazy">
-        </div>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1770274721" alt="Cosmos puppy" loading="lazy">
+  <h3 class="ap-name">Cosmos</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1770274721" alt="Willow puppy" loading="lazy">
+  <h3 class="ap-name">Willow</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1770274721" alt="Jasper puppy" loading="lazy">
+  <h3 class="ap-name">Jasper</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1770274721" alt="Lilly puppy" loading="lazy">
+  <h3 class="ap-name">Lilly</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1770274721" alt="Ivy puppy" loading="lazy">
+  <h3 class="ap-name">Ivy</h3>
+</article>
+</div>
         <div class="ap-bio">Sweet, curious, and people-focused. Calm cuddler with a playful streak.</div>
       </article>
 
@@ -223,10 +238,8 @@
         <div class="muted sd-contact-meta">Email: SandiesDoodles1@gmail.com
 <div class="sd-contact-phone"><span class="sd-contact-label">Call/Text:</span> <a href="tel:+17725307433">(772) 530-7433</a></div>
 </div>
-        <div class="muted">Instagram: @SandieDoodles1</div>
         <div class="muted">Location: Hobe Sound, Florida</div>
       </div>
-      <div class="muted">© <span id="y"></span> Sandies Doodles</div>
     
 
 <form class="contact-form" id="contactForm" action="https://formspree.io/f/xykpbwkg" method="POST">
@@ -256,7 +269,7 @@
   </div>
 
   <label>Puppy name (optional)
-    <input name="puppy" placeholder="Cosmos, Willow, Jasper, Lilly, Ivy…">
+    <input name="puppy" placeholder="Cosmos, Willow, Jasper, Lilly, Ivy">
   </label>
 
   <label>Message
@@ -318,7 +331,6 @@ document.addEventListener("DOMContentLoaded",()=>{
   card.classList.add("is-sold");
   const name=card.querySelector(".ap-name");
   if(name && !name.querySelector(".sold-pill")){
-    name.textContent="Daisy";
     const pill=document.createElement("span");
     pill.className="sold-pill";
     pill.textContent="Sold";
@@ -326,5 +338,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   }
 });
 </script>
+
+<footer class="site-footer">© 2026 Sandies Doodles</footer>
 </body>
 </html>
