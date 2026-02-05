@@ -881,3 +881,33 @@ div:empty{
 /* Lilly: show a bit more body, less face-crop */
 #ap_Lilly{ object-position: 50% 35% !important; }
 
+
+
+/* contact polish */
+.contact-note{
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(43,43,43,.72);
+  margin: 8px 0 0;
+}
+.contact-quick{
+  margin: 10px 0 14px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.contact-quick span{
+  color: rgba(43,43,43,.72);
+  font-weight: 800;
+  margin-right: 6px;
+}
+.contact-quick a{
+  text-decoration: none;
+  border-bottom: 1px solid rgba(43,43,43,.25);
+}
+.footer-copy{
+  margin-top: 18px;
+  padding-top: 10px;
+  font-size: 12px;
+  color: rgba(43,43,43,.65);
+  text-align: center;
+}
