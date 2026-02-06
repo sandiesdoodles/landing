@@ -13,44 +13,191 @@
 /* shows a bit more (less “zoom”) */
 #ap_Lilly{ object-position: 50% 30% !important; }
 
-/* tighten gap between menu and <section id="pups" class="section">
+/* tighten gap between menu and Available Puppies */
+#puppies{ padding-top: 24px !important; }
+#puppies h2, #puppies .section-title, #puppies .ap-title{ margin-top: 0 !important; }
+
+</style>
+
+<style id="puppySizingFix">
+
+/* tighten header -> puppies gap (more aggressive) */
+#puppies{
+  padding-top: 0 !important;
+  margin-top: -36px;              /* pulls section upward */
+  scroll-margin-top: 110px;       /* keeps Puppies tab scroll landing nicely */
+}
+#puppies .ap-title,
+#puppies h2{
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+#puppies .ap-cta,
+#puppies .contact-btn{
+  margin-top: 6px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Force all puppy card images to be the same size and fill the box */
+.ap-img{
+  width:100% !important;
+  height:260px !important;
+  display:block !important;
+  object-fit:cover !important;
+  object-position:center !important;
+}
+</style>
+
+
+<style id="contactTypographyClean">
+/* contact typography clean */
+#sdContactMeta {
+  margin-top: 6px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(0,0,0,.70);
+}
+#sdContactMeta .cm-label {
+  display: inline-block;
+  min-width: 86px;
+  font-weight: 650;
+  color: rgba(0,0,0,.78);
+}
+#sdContactMeta a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.call-now-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.14);
+  text-decoration: none;
+  font-weight: 650;
+  background: rgba(255,255,255,.55);
+}
+@media (max-width: 680px) {
+  .pups-cta-wrap {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .call-now-btn { margin-left: 0; }
+}
+</style>
+
+<style id="contactPolish">
+.sd-contact-meta{font-size:15px;line-height:1.55;color:#475569;font-weight:600;}
+.sd-contact-meta a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+.sd-contact-label{font-weight:800;color:#1f2937;margin-right:6px;}
+.sd-contact-phone{margin-top:10px;}
+.sd-contact-phone a{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  font-weight:800;
+  text-decoration:none;
+}
+.sd-contact-phone a:hover{filter:brightness(0.98);}
+</style>
+</head>
+<body class="sd_header_v3">
+  <div class="bg"></div>
+
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Sandies Doodles">
+        <img src="assets/logo.png" alt="Sandies Doodles logo" />
+      </a>
+      <div class="site-kicker">FAMILY-RAISED • MULTI-GENERATIONAL GOLDENDOODLES</div>
+      <nav class="pill-nav" aria-label="Site">
+        <a href="#puppies">Puppies</a>
+        <a href="#parents">Parents</a>
+        <a href="#how">About Litter</a>
+      </nav><div class="header-cta">
+        
+      </div>
+
+<!-- sd_autopatch_contact_btn:start -->
+<div class="nav-cta-row">
+  
+</div>
+<!-- /sd_autopatch_contact_btn -->
+
+    </header>
+
+    <main id="top" class="hero"></main>
+
+    <section id="puppies" class="section">
   <h2 class="section-title">Available Puppies</h2>
-  <div class="pups-cta-wrap">
-    <a class="contact-now-btn" href="#contactForm">Contact Now</a>
-  </div>
-
+<div class="pups-cta-wrap"><a class="contact-now-btn" href="#contactForm">Contact Now</a>
+</div>
   <div class="ap-grid">
-    <article class="ap-card" data-pup="Cosmos">
-      <h3 class="ap-name">Cosmos</h3>
-      <img class="ap-img" src="assets/pup_slides/cosmos_01.jpg" alt="Cosmos puppy" loading="lazy">
-      <p class="ap-desc">Sweet, curious, and people-focused. Calm cuddler with a playful streak.</p>
-    </article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Cosmos" src="assets/pup_slides/cosmos_01.jpg?v=1770274721" alt="Cosmos puppy" loading="lazy">
+  <h3 class="ap-name">Cosmos</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1770274721" alt="Willow puppy" loading="lazy">
+  <h3 class="ap-name">Willow</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1770274721" alt="Jasper puppy" loading="lazy">
+  <h3 class="ap-name">Jasper</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1770274721" alt="Lilly puppy" loading="lazy">
+  <h3 class="ap-name">Lilly</h3>
+</article>
+<article class="ap-card">
+  <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1770274721" alt="Ivy puppy" loading="lazy">
+  <h3 class="ap-name">Ivy</h3>
+</article>
+</div>
+        <div class="ap-bio">Sweet, curious, and people-focused. Calm cuddler with a playful streak.</div>
+      </article>
 
-    <article class="ap-card" data-pup="Willow">
-      <h3 class="ap-name">Willow</h3>
-      <img class="ap-img" src="assets/pup_slides/willow_01.jpg" alt="Willow puppy" loading="lazy">
-      <p class="ap-desc">Chill and cozy. Happy to nap, then pop up for playtime.</p>
-    </article>
+      <article class="ap-card" data-pup="Jasper">
+        <h3 class="ap-name">Jasper</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Jasper" src="assets/pup_slides/jasper_01.jpg?v=1770009078" alt="Jasper puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Confident explorer. Loves attention and follows you like a tiny shadow.</div>
+      </article>
 
-    <article class="ap-card" data-pup="Jasper">
-      <h3 class="ap-name">Jasper</h3>
-      <img class="ap-img" src="assets/pup_slides/jasper_01.jpg" alt="Jasper puppy" loading="lazy">
-      <p class="ap-desc">Confident explorer. Loves attention and follows you like a tiny shadow.</p>
-    </article>
+      <article class="ap-card" data-pup="Lilly">
+        <h3 class="ap-name">Lilly</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Lilly" src="assets/pup_slides/lilly_01.jpg?v=1770009078" alt="Lilly puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Gentle snuggler. Soft temperament and very calm when handled.</div>
+      </article>
 
-    <article class="ap-card" data-pup="Lilly">
-      <h3 class="ap-name">Lilly</h3>
-      <img class="ap-img" src="assets/pup_slides/lilly_01.jpg" alt="Lilly puppy" loading="lazy">
-      <p class="ap-desc">Gentle snuggler. Soft temperament and very calm when handled.</p>
-    </article>
+      <article class="ap-card" data-pup="Ivy">
+        <h3 class="ap-name">Ivy</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Ivy" src="assets/pup_slides/ivy_01.jpg?v=1770009078" alt="Ivy puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Bright-eyed and bold. Quick learner with a friendly, outgoing vibe.</div>
+      </article>
 
-    <article class="ap-card" data-pup="Ivy">
-      <h3 class="ap-name">Ivy</h3>
-      <img class="ap-img" src="assets/pup_slides/ivy_01.jpg" alt="Ivy puppy" loading="lazy">
-      <p class="ap-desc">Bright-eyed and bold. Quick learner with a friendly, outgoing vibe.</p>
-    </article>
-  </div>
+      <article class="ap-card" data-pup="Willow">
+        <h3 class="ap-name">Willow</h3>
+        <div class="ap-frame">
+          <img class="ap-img" id="ap_Willow" src="assets/pup_slides/willow_01.jpg?v=1770009078" alt="Willow puppy" loading="lazy">
+        </div>
+        <div class="ap-bio">Chill and cozy. Happy to nap, then pop up for playtime.</div>
+      </article>
+
+      </div>
 </section>
+
 <section id="parents" class="section card">
       <div class="section-head">
         <h2>Parents</h2>
@@ -122,7 +269,7 @@
   </div>
 
   <label>Puppy name (optional)
-    <input name="puppy" placeholder="Cosmos, Willow, Jasper, Lilly, Ivy…">
+    <input name="puppy" placeholder="Cosmos, Willow, Jasper, Lilly, Ivy">
   </label>
 
   <label>Message
