@@ -35,3 +35,8 @@ trace_*
 *.mp4
 *.mov
 *.mkv
+# scratch/logs (keep repo clean)
+bits.txt
+run_pi.log
+cb_*_asm.txt
+cb_*.txt
