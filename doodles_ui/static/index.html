@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doodles Control Panel</title>
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:32px auto;padding:0 16px}
+    .row{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+    button{padding:10px 14px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+    button:hover{border-color:#bbb}
+    .card{border:1px solid #eee;border-radius:14px;padding:14px;margin-top:14px}
+    pre{white-space:pre-wrap;background:#fafafa;border:1px solid #eee;border-radius:12px;padding:12px;overflow:auto}
+    .ok{color:green;font-weight:700}
+    .bad{color:#b00020;font-weight:700}
+    input[type="file"]{padding:10px 0}
+    input[type="text"]{padding:10px 12px;border:1px solid #ddd;border-radius:10px;width:min(520px,100%)}
+  </style>
+</head>
+<body>
+  <h1>Doodles Control Panel</h1>
+
+  <div class="row">
+    <button onclick="loadStatus()">Refresh Status</button>
+    <button onclick="doPost('/api/check')">Run Check</button>
+    <button onclick="doPost('/api/rollback')">Rollback to Baseline</button>
+  </div>
+
+  <div class="card">
+    <h2>Cosmos Photo</h2>
+    <input id="cosmosFile" type="file" accept="image/*" />
+    <div class="row">
+      <button onclick="uploadCosmos(false)">Set Cosmos (local only)</button>
+      <button onclick="uploadCosmos(true)">Set Cosmos + Safe Push</button>
+    </div>
+    <div style="font-size:14px;color:#555">
+      Swaps <code>assets/pup_slides/cosmos_01.jpg</code>, bumps the cache on Cosmos in <code>index.html</code>, runs <code>sd_check.py</code>, and optionally commits/pushes.
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="summary">Status: <span>…</span></div>
+    <h3>Git</h3>
+    <pre id="git">…</pre>
+    <h3>Check</h3>
+    <pre id="check">…</pre>
+    <h3>Last Action</h3>
+    <pre id="action">…</pre>
+  </div>
+
+<script>
+async function loadStatus(){
+  setSummary("Loading…");
+  const r = await fetch("/api/status");
+  const j = await r.json();
+  if(!r.ok){ setSummary("ERROR", true); document.getElementById("action").textContent = JSON.stringify(j,null,2); return; }
+  const pass = (j.check && j.check.code===0);
+  setSummary(pass ? "PASS ✅" : "FAIL ❌", !pass);
+  document.getElementById("git").textContent = (j.git.out || "") + (j.git.err ? "\n\nERR:\n"+j.git.err : "");
+  document.getElementById("check").textContent = (j.check.out || "") + (j.check.err ? "\n\nERR:\n"+j.check.err : "");
+}
+function setSummary(text, bad=false){
+  document.getElementById("summary").innerHTML = `Status: <span class="${bad?'bad':'ok'}">${text}</span>`;
+}
+async function doPost(url){
+  const r = await fetch(url,{method:"POST"});
+  const j = await r.json();
+  document.getElementById("action").textContent = JSON.stringify(j,null,2);
+  await loadStatus();
+}
+async function uploadCosmos(doPush){
+  const f = document.getElementById("cosmosFile").files[0];
+  if(!f){ alert("Pick a Cosmos image first."); return; }
+  const fd = new FormData();
+  fd.append("cosmos", f);
+
+  const url = doPush ? "/api/set_cosmos?push=1" : "/api/set_cosmos";
+  const r = await fetch(url, {method:"POST", body: fd});
+  const j = await r.json();
+  document.getElementById("action").textContent = JSON.stringify(j,null,2);
+  await loadStatus();
+}
+loadStatus();
+</script>
+</body>
+</html>

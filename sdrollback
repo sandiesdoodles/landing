@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+git checkout baseline -- index.html styles.css
+echo "OK: rolled back index.html + styles.css from baseline"
