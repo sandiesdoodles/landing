@@ -2,27 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ivy • Sandies Doodles</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ivy | Sandies Doodles</title>
+  <style>
+:root{
+  --bg:#f7efe9;
+  --card:#fffaf6;
+  --ink:#1b1b1b;
+  --muted:#5b5b5b;
+  --line:rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink);
+  background: radial-gradient(1000px 500px at 50% 0%, rgba(245,200,185,.55), transparent 60%),
+              linear-gradient(#f9f1eb, #f7efe9);
+}
+.wrap{max-width:960px;margin:0 auto;padding:28px 16px 48px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+h1{font-size:40px;line-height:1.1;margin:0}
+a{color:#1b1b1b;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{font-weight:600}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 14px 38px rgba(0,0,0,.08);
+  padding:22px 22px 18px;
+}
+.card h2{margin:0 0 12px;font-size:26px}
+.bio{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink);
+  margin:0;
+  white-space:pre-wrap;
+}
+</style>
 </head>
 <body>
-  <main class="bio-page">
-    <div class="bio-top">
+  <div class="wrap">
+    <div class="topbar">
       <h1>Ivy</h1>
-      <div class="bio-back"><a href="../index.html#top">Back to site →</a></div>
+      <a class="back" href="../index.html#top">Back to site →</a>
     </div>
-
-    <section class="bio-card">
+    <div class="card">
       <h2>About Ivy</h2>
-      <div class="bio-copy">
-        <p>Estimated Adult Size: ~27–38 lbs (medium, likely on the smaller side)</p>
-        <p>Ivy is our sweet, affectionate girl with a playful, happy spirit. Her warm apricot coat is soft and curly, and her bright eyes and little expressions give her so much personality. She has a gentle presence but also a playful streak that makes her fun and engaging.</p>
-        <p>Ivy bonds closely with her people. She loves attention, enjoys interactive moments, and then happily settles in beside you. She’s the kind of puppy who thrives on connection and would do beautifully in a loving family environment.</p>
-        <p>Raised in our home with daily handling and exposure to normal household routines, Ivy is confident, social, and ready to grow with her forever family. She has had her wellness exam and age-appropriate vaccinations.</p>
-        <p>If you’re looking for a sweet, affectionate girl who will likely mature into a smaller-medium companion, Ivy may be your perfect match.</p>
-      </div>
-    </section>
-  </main>
+      <p class="bio">Estimated Adult Size: ~27–38 lbs (medium, likely on the smaller side)
+
+Ivy is our sweet, affectionate girl with a playful, happy spirit. Her warm apricot coat is soft and curly, and her bright eyes and little expressions give her so much personality. She has a gentle presence but also a playful streak that makes her fun and engaging.
+
+Ivy bonds closely with her people. She loves attention, enjoys interactive moments, and then happily settles in beside you. She’s the kind of puppy who thrives on connection and would do beautifully in a loving family environment.
+
+Raised in our home with daily handling and exposure to normal household routines, Ivy is confident, social, and ready to grow with her forever family. She has had her wellness exam and age-appropriate vaccinations.
+
+If you’re looking for a sweet, affectionate girl who will likely mature into a smaller-medium companion, Ivy may be your perfect match.</p>
+    </div>
+  </div>
 </body>
 </html>

@@ -2,27 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Willow • Sandies Doodles</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Willow | Sandies Doodles</title>
+  <style>
+:root{
+  --bg:#f7efe9;
+  --card:#fffaf6;
+  --ink:#1b1b1b;
+  --muted:#5b5b5b;
+  --line:rgba(0,0,0,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink);
+  background: radial-gradient(1000px 500px at 50% 0%, rgba(245,200,185,.55), transparent 60%),
+              linear-gradient(#f9f1eb, #f7efe9);
+}
+.wrap{max-width:960px;margin:0 auto;padding:28px 16px 48px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+h1{font-size:40px;line-height:1.1;margin:0}
+a{color:#1b1b1b;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{font-weight:600}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 14px 38px rgba(0,0,0,.08);
+  padding:22px 22px 18px;
+}
+.card h2{margin:0 0 12px;font-size:26px}
+.bio{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink);
+  margin:0;
+  white-space:pre-wrap;
+}
+</style>
 </head>
 <body>
-  <main class="bio-page">
-    <div class="bio-top">
+  <div class="wrap">
+    <div class="topbar">
       <h1>Willow</h1>
-      <div class="bio-back"><a href="../index.html#top">Back to site →</a></div>
+      <a class="back" href="../index.html#top">Back to site →</a>
     </div>
-
-    <section class="bio-card">
+    <div class="card">
       <h2>About Willow</h2>
-      <div class="bio-copy">
-        <p>Estimated Adult Size: ~30–42 lbs (medium)</p>
-        <p>Willow is our warm apricot girl with soft curls and a tender, expressive face. She has a beautiful white chest patch and bright eyes that show both sweetness and curiosity.</p>
-        <p>She carries a calm confidence — affectionate, thoughtful, and steady. Willow enjoys interaction but has a peaceful presence that makes her especially comforting to be around. She loves being close to her people and adapts smoothly to routine.</p>
-        <p>Raised in our home with consistent handling and everyday family life, Willow is comfortable and socialized. She has had her wellness exam and age-appropriate vaccinations.</p>
-        <p>If you’re looking for a loving, balanced companion who will likely mature into a beautiful medium-sized family dog, Willow would make a wonderful addition.</p>
-      </div>
-    </section>
-  </main>
+      <p class="bio">Estimated Adult Size: ~30–42 lbs (medium)
+
+Willow is our warm apricot girl with soft curls and a tender, expressive face. She has a beautiful white chest patch and bright eyes that show both sweetness and curiosity.
+
+She carries a calm confidence — affectionate, thoughtful, and steady. Willow enjoys interaction but has a peaceful presence that makes her especially comforting to be around. She loves being close to her people and adapts smoothly to routine.
+
+Raised in our home with consistent handling and everyday family life, Willow is comfortable and socialized. She has had her wellness exam and age-appropriate vaccinations.
+
+If you’re looking for a loving, balanced companion who will likely mature into a beautiful medium-sized family dog, Willow would make a wonderful addition.</p>
+    </div>
+  </div>
 </body>
 </html>

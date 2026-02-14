@@ -1012,3 +1012,8 @@ div:empty{
 }
 /* --- END HIDE PUPPY CARD NAME BAR (AUTO) --- */
 
+
+
+/* Bio link under puppy cards */
+.ap-bio-link{margin:10px auto 0; text-align:center;}
+.ap-bio-link a{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.72); font-weight:700;}
