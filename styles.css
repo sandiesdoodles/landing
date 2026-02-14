@@ -1002,3 +1002,13 @@ div:empty{
 }
 .bio-copy p:last-child { margin-bottom: 0; }
 /* END BIO_PAGES */
+
+/* --- HIDE PUPPY CARD NAME BAR (AUTO) --- */
+.ap-name,
+.ap-title,
+.ap-caption,
+.ap-card h3 {
+  display: none !important;
+}
+/* --- END HIDE PUPPY CARD NAME BAR (AUTO) --- */
+
