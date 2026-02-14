@@ -1032,3 +1032,21 @@ div:empty{
   background:rgba(255,255,255,.78);
   font-weight:800;
 }
+
+/* Bio link row under each puppy card */
+.ap-bio-row{
+  margin: 10px auto 0;
+  text-align: center;
+}
+.ap-bio-link{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.78);
+  font-weight: 800;
+  text-decoration: none;
+}
+.ap-bio-link:hover{
+  background: rgba(255,255,255,.92);
+}
