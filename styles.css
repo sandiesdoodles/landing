@@ -1017,3 +1017,18 @@ div:empty{
 /* Bio link under puppy cards */
 .ap-bio-link{margin:10px auto 0; text-align:center;}
 .ap-bio-link a{display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid rgba(0,0,0,.12); background:rgba(255,255,255,.72); font-weight:700;}
+
+/* Make puppy photos clickable to full bio */
+.ap-img-link{display:block; border-radius:18px; overflow:hidden;}
+.ap-img-link img{display:block; width:100%; height:auto;}
+
+/* Bio link button under each card */
+.ap-bio-link{margin:10px auto 0; text-align:center;}
+.ap-bio-link a{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:rgba(255,255,255,.78);
+  font-weight:800;
+}
