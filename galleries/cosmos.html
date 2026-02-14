@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Cosmos – Full Bio</title>
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 18px; }
+    .toprow{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .hero{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 14px; margin-top: 12px; }
+    .hero img{ width:100%; border-radius:18px; display:block; }
+    .bio{ background: rgba(255,255,255,0.65); border: 1px solid rgba(0,0,0,0.06); border-radius:18px; padding: 14px 16px; }
+    .bio p{ margin: 0 0 12px; line-height: 1.55; }
+    .grid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin-top: 14px; }
+    .grid img{ width:100%; border-radius:18px; display:block; }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="toprow">
+      <h1 style="margin:0;">Cosmos</h1>
+      <a href="../index.html#top" class="gallery-card" style="max-width:220px;"><span>Back to site</span><span class="arrow">←</span></a>
+    </div>
+
+    <div class="hero">
+      <img src="../assets/pup_slides/cosmos_01.jpg" alt="Cosmos main photo" loading="lazy"/>
+      <div class="bio">
+        <p>Cosmos is our little gentleman with a big heart. He has a confident, people-focused personality and the sweetest way of locking eyes with you like he’s truly listening. He’s playful and curious, but not wild — he enjoys engaging, learning, and then settling in close for affection. Cosmos naturally bonds with people and thrives on interaction, making him a wonderful fit for a family who wants a connected, responsive companion.</p>
+
+        <p>He has a warm apricot coat with soft, plush curls and a clean white chest patch that gives him a classic doodle look. His small white blaze on the bridge of his nose is a subtle signature detail that makes him instantly recognizable. He carries himself with a calm confidence and has that expressive, teddy-bear charm that wins hearts quickly.</p>
+
+        <p>Raised in our home with daily handling and social exposure, Cosmos is used to normal household activity and lots of love. At 11 weeks, he’s at the perfect stage to transition smoothly into his forever home — confident enough to explore, young enough to adapt beautifully to your routine.</p>
+
+        <p>Cosmos has had his wellness exam and age-appropriate vaccinations, and he’s been carefully monitored as part of our litter from day one.</p>
+
+        <p>If you’re looking for a sweet, affectionate boy with personality, confidence, and that unmistakable “heart-stealer” presence, Cosmos may be your perfect match.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <img src="../assets/pup_slides/cosmos_02.jpg" alt="Cosmos photo 2" loading="lazy"/>
+      <img src="../assets/pup_slides/cosmos_03.jpg" alt="Cosmos photo 3" loading="lazy"/>
+    </div>
+  </div>
+</body>
+</html>
