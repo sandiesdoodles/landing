@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank you | Sandies Doodles</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="assets/brand/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="thanks-page">
+    <main class="thanks">
+      <img src="assets/brand/logo.png" alt="Sandies Doodles" width="72" />
+      <h1>You’re on the early list.</h1>
+      <p>
+        Thanks for reaching out about Abby’s Litter 2. We’ll follow up with puppy
+        updates and reservation details when deposits open for approved families.
+        Follow along on Facebook in the meantime.
+      </p>
+      <div class="hero-actions">
+        <a
+          class="btn btn-primary"
+          id="thanksFb"
+          href="https://www.facebook.com/SandiesDoodles"
+          target="_blank"
+          rel="noopener"
+          >Open Facebook</a
+        >
+        <a class="btn btn-ghost" href="./">Back to site</a>
+      </div>
+    </main>
+    <script src="data/litter.js"></script>
+    <script>
+      (() => {
+        const fb = window.SANDIES?.contact?.facebook;
+        const el = document.getElementById("thanksFb");
+        if (fb && el) el.href = fb;
+      })();
+    </script>
+  </body>
+</html>
