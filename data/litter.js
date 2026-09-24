@@ -27,7 +27,7 @@ window.SANDIES = {
       "Individual profiles are live. Join the early list — deposits open next for approved families.",
     girls: ["Delilah", "Violet", "Ginger", "Lotus", "Meadow"],
     boys: ["Cypress", "Oakley", "Cedar"],
-    image: "assets/pups/litter2/group.jpg",
+    image: "assets/pups/litter2/group.jpg?v=grp0924",
     imageAlt: "Abby’s Litter 2 puppies napping together",
     ctaLabel: "Join early list",
     ctaHref: "#waitlist",
