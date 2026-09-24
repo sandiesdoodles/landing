@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sandies Doodles | Family-raised Goldendoodles in Hobe Sound, FL</title>
+    <meta
+      name="description"
+      content="Abby’s Litter 2 is here — 8 named Goldendoodles in Hobe Sound, Florida. Meet the puppies and join the early list."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sandies Doodles" />
+    <meta property="og:title" content="Sandies Doodles — Abby’s Litter 2" />
+    <meta
+      property="og:description"
+      content="8 named puppies · 5 girls · 3 boys. Home-raised Goldendoodles in Hobe Sound, Florida. Join the early list."
+    />
+    <meta property="og:image" content="assets/brand/hero-poster.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1e3a32" />
+    <link rel="icon" href="assets/brand/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=litter2b" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header" data-elevate>
+      <a class="brand-lockup" href="#top">
+        <img src="assets/brand/logo.png" alt="" width="48" height="36" />
+        <span>Sandies Doodles</span>
+      </a>
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#litter">This litter</a>
+        <a href="#parents">Parents</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#transport">Transport</a>
+        <a href="#waitlist">Early list</a>
+        <a
+          class="nav-social-inline"
+          id="headerFbMobile"
+          href="https://www.facebook.com/SandiesDoodles"
+          target="_blank"
+          rel="noopener"
+          >Facebook</a
+        >
+      </nav>
+      <div class="header-actions">
+        <a
+          class="nav-social"
+          id="headerFb"
+          href="https://www.facebook.com/SandiesDoodles"
+          target="_blank"
+          rel="noopener"
+          >Facebook</a
+        >
+        <a class="nav-cta" href="#waitlist">Early list</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            class="hero-photo"
+            src="assets/brand/hero-yard.jpg"
+            alt=""
+            fetchpriority="high"
+          />
+          <video
+            class="hero-video"
+            id="heroVideo"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="metadata"
+            poster="assets/brand/hero-poster.jpg"
+          >
+            <source src="assets/video/hero.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-veil"></div>
+        </div>
+        <div class="hero-copy">
+          <p class="hero-brand reveal">Sandies Doodles</p>
+          <h1 class="reveal delay-1" id="heroHeadline">Abby’s Litter 2 is here.</h1>
+          <p class="hero-support reveal delay-2" id="heroSupport">
+            Delilah, Ginger, Meadow, Lotus, Violet, Cypress, Oakley, and Cedar —
+            eight family-raised F2 Goldendoodles growing at home in Hobe Sound.
+          </p>
+          <div class="hero-actions reveal delay-3">
+            <a class="btn btn-primary" href="#waitlist">Join early list</a>
+            <a class="btn btn-ghost" id="heroSecondary" href="#litter">Meet the puppies</a>
+          </div>
+        </div>
+      </section>
+
+      <p class="site-banner" id="siteBanner" hidden></p>
+
+      <section class="section how" id="how">
+        <div class="section-intro reveal">
+          <h2>How it works</h2>
+          <p>A clear path from first hello to go-home day — built for serious families.</p>
+        </div>
+        <ol class="process" id="processList"></ol>
+      </section>
+
+      <section class="section litter" id="litter">
+        <div class="litter-panel" id="litterPanel"></div>
+        <div class="pup-grid litter2-grid" id="litter2Grid" aria-label="Litter 2 puppies"></div>
+      </section>
+
+      <section class="section parents" id="parents">
+        <div class="section-intro reveal">
+          <h2>Meet the parents</h2>
+          <p id="geneticsLine"></p>
+        </div>
+        <div class="parent-grid" id="parentGrid"></div>
+      </section>
+
+      <section class="section proof" id="homes">
+        <div class="section-intro reveal">
+          <h2>Happy homes</h2>
+          <p>Families from our first litter — home-raised dogs, matched with care.</p>
+        </div>
+        <div class="proof-layout">
+          <div class="atmosphere" aria-hidden="true">
+            <img src="assets/brand/atmosphere-1.jpg" alt="" loading="lazy" />
+            <img src="assets/brand/atmosphere-2.jpg" alt="" loading="lazy" />
+            <img src="assets/brand/atmosphere-3.jpg" alt="" loading="lazy" />
+          </div>
+          <div class="quotes" id="quoteList"></div>
+        </div>
+      </section>
+
+      <section class="section alumni" id="alumni">
+        <div class="section-intro reveal">
+          <h2>Previous litter</h2>
+          <p id="alumniNote"></p>
+        </div>
+        <div class="pup-grid" id="pupGrid"></div>
+      </section>
+
+      <section class="section pricing" id="pricing">
+        <div class="section-intro reveal">
+          <h2>Pricing</h2>
+          <p id="pricingLabel"></p>
+        </div>
+        <div class="price-panel" id="pricePanel"></div>
+      </section>
+
+      <section class="section transport" id="transport">
+        <div class="section-intro reveal">
+          <h2 id="transportTitle">Reservations &amp; transport</h2>
+          <p id="transportIntro"></p>
+        </div>
+        <div class="transport-panel" id="transportPanel"></div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-intro reveal">
+          <h2>Questions</h2>
+          <p>Straight answers before you ever send a deposit.</p>
+        </div>
+        <div class="faq-list" id="faqList"></div>
+      </section>
+
+      <section class="section waitlist" id="waitlist">
+        <div class="waitlist-panel">
+          <div class="section-intro">
+            <h2>Early update list</h2>
+            <p>
+              Abby’s Litter 2 profiles are live — 8 puppies, 5 girls and 3 boys.
+              Join the interest list now. Deposits open next for approved families.
+              Puppies go home at 8+ weeks after vet clearance.
+            </p>
+          </div>
+          <form class="waitlist-form" id="waitlistForm">
+            <input type="hidden" name="_subject" value="Sandies Doodles early list" />
+            <input
+              type="text"
+              name="_gotcha"
+              class="hp"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <label>
+              Name
+              <input name="name" required autocomplete="name" />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" required autocomplete="email" />
+            </label>
+            <label>
+              Phone
+              <input name="phone" type="tel" required autocomplete="tel" />
+            </label>
+            <label>
+              City
+              <input name="city" required autocomplete="address-level2" />
+            </label>
+            <label>
+              State
+              <input name="state" required maxlength="40" autocomplete="address-level1" />
+            </label>
+            <label>
+              Preference
+              <select name="preference" required>
+                <option value="">Select…</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Either / open</option>
+              </select>
+            </label>
+            <label>
+              Pickup or transport?
+              <select name="handoff" required>
+                <option value="">Select…</option>
+                <option>Local pickup (preferred)</option>
+                <option>Meet-up delivery</option>
+                <option>Flight nanny / ground transport</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              Owned dogs before?
+              <select name="dogExperience" required>
+                <option value="">Select…</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label class="span-2">
+              Kids / other pets in the home?
+              <input name="household" placeholder="e.g. 2 kids, 1 cat — or none" />
+            </label>
+            <label>
+              Ready for pickup around 8 weeks?
+              <select name="timeline" required>
+                <option value="">Select…</option>
+                <option>Yes — ready at go-home</option>
+                <option>Flexible by 1–2 weeks</option>
+                <option>Just browsing / later litter</option>
+              </select>
+            </label>
+            <label class="check span-2">
+              <input type="checkbox" name="budgetReady" value="yes" />
+              Budget ready for puppy price + deposit when reservations open
+            </label>
+            <label class="span-2">
+              Anything else we should know?
+              <textarea
+                name="message"
+                rows="3"
+                placeholder="Temperament hopes, questions, how you found us…"
+              ></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit" id="waitlistSubmit">
+              Join early list
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-row">
+          <div>
+            <h2>Contact</h2>
+            <p id="contactBlock"></p>
+          </div>
+          <div class="contact-actions">
+            <a
+              class="btn btn-ghost"
+              id="fbLink"
+              href="https://www.facebook.com/SandiesDoodles"
+              target="_blank"
+              rel="noopener"
+              >Facebook page</a
+            >
+            <a class="btn btn-primary" href="#waitlist">Join early list</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Sandies Doodles · Hobe Sound, Florida</span>
+      <span class="footer-note">Abby’s Litter 2 · early list open</span>
+    </footer>
+
+    <dialog class="pup-dialog" id="pupDialog">
+      <button class="dialog-close" type="button" id="dialogClose" aria-label="Close">
+        Close
+      </button>
+      <div class="dialog-body" id="dialogBody"></div>
+    </dialog>
+
+    <script src="data/litter.js?v=cards0924"></script>
+    <script src="app.js?v=studio18"></script>
+  </body>
+</html>

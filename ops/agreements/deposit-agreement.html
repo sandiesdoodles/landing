@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sandies Doodles — Puppy Reservation Deposit</title>
+    <style>
+      :root {
+        --ink: #15201c;
+        --line: #c9d2ce;
+        --soft: #5a6862;
+      }
+      body {
+        margin: 0;
+        padding: 2rem 1.25rem 3rem;
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--ink);
+        line-height: 1.45;
+        max-width: 720px;
+        margin-inline: auto;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin: 0 0 0.25rem;
+      }
+      .sub {
+        color: var(--soft);
+        margin: 0 0 1.5rem;
+        font-size: 0.95rem;
+      }
+      .grid {
+        display: grid;
+        gap: 0.75rem 1rem;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 1.25rem;
+      }
+      label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--soft);
+        margin-bottom: 0.2rem;
+      }
+      .line {
+        border-bottom: 1px solid var(--ink);
+        min-height: 1.5rem;
+      }
+      .full {
+        grid-column: 1 / -1;
+      }
+      ul {
+        padding-left: 1.2rem;
+      }
+      li {
+        margin-bottom: 0.45rem;
+      }
+      .sign {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .sig-line {
+        border-top: 1px solid var(--ink);
+        margin-top: 2.5rem;
+        padding-top: 0.35rem;
+        font-size: 0.9rem;
+      }
+      .print {
+        margin-bottom: 1.25rem;
+      }
+      button {
+        font: inherit;
+        padding: 0.5rem 0.9rem;
+        cursor: pointer;
+      }
+      @media print {
+        .print {
+          display: none;
+        }
+        body {
+          padding: 0;
+        }
+      }
+      @media (max-width: 560px) {
+        .grid,
+        .sign {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="print">
+      <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <h1>Sandies Doodles Puppy Reservation Deposit</h1>
+    <p class="sub">Abby’s Litter · Hobe Sound, Florida</p>
+
+    <div class="grid">
+      <div>
+        <label>Buyer name</label>
+        <div class="line"></div>
+      </div>
+      <div>
+        <label>Phone</label>
+        <div class="line"></div>
+      </div>
+      <div>
+        <label>Email</label>
+        <div class="line"></div>
+      </div>
+      <div>
+        <label>Preferred sex / puppy</label>
+        <div class="line"></div>
+      </div>
+      <div>
+        <label>Deposit amount</label>
+        <div class="line">$500</div>
+      </div>
+      <div>
+        <label>Total puppy price</label>
+        <div class="line">$</div>
+      </div>
+      <div class="full">
+        <label>Remaining balance</label>
+        <div class="line">$</div>
+      </div>
+    </div>
+
+    <p>
+      This deposit reserves buyer’s place for the current Sandies Doodles litter
+      and is applied toward the final purchase price.
+    </p>
+
+    <ul>
+      <li>
+        Deposit is <strong>non-refundable</strong> if buyer cancels, changes
+        their mind, fails to communicate, or does not complete pickup/transport
+        by the agreed date.
+      </li>
+      <li>
+        Deposit may be <strong>transferred to a future litter</strong> at
+        Sandies Doodles’ discretion.
+      </li>
+      <li>
+        If Sandies Doodles cannot provide a puppy due to health, vet
+        recommendation, breeder decision, or another issue outside buyer
+        control, the deposit will be <strong>refunded or transferred</strong>.
+      </li>
+      <li>
+        No puppy leaves before <strong>8 weeks</strong> old, veterinary
+        clearance, required paperwork (including certificate of veterinary
+        inspection), and <strong>full payment</strong>.
+      </li>
+      <li>
+        Transport / delivery costs are <strong>separate</strong> from the puppy
+        price and are buyer-paid when offered.
+      </li>
+      <li>
+        Local pickup in Hobe Sound is preferred. Buyer-paid transport may be
+        available for approved families only.
+      </li>
+    </ul>
+
+    <div class="sign">
+      <div>
+        <div class="sig-line">Buyer signature</div>
+        <div class="sig-line">Date</div>
+      </div>
+      <div>
+        <div class="sig-line">Seller signature (Sandies Doodles)</div>
+        <div class="sig-line">Date</div>
+      </div>
+    </div>
+  </body>
+</html>
