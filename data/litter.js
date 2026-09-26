@@ -187,7 +187,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Lime",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/cypress.jpg?v=cards0924",
+      image: "assets/pups/litter2/cypress.jpg?v=cards0926",
       status: "available",
       blurb:
         "Warm apricot curls, pale muzzle, and a confident little stare.",
@@ -198,7 +198,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Grey / blaze",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/oakley.jpg?v=cards0924",
+      image: "assets/pups/litter2/oakley.jpg?v=cards0926",
       status: "available",
       blurb:
         "White forehead blaze, warm curls, and a soft, steady look.",
@@ -209,7 +209,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Blue / cyan",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/delilah.jpg?v=cards0924",
+      image: "assets/pups/litter2/delilah.jpg?v=cards0926",
       status: "available",
       blurb:
         "Soft apricot curls and a calm, sweet little face.",
@@ -220,7 +220,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Purple",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/violet.jpg?v=cards0924",
+      image: "assets/pups/litter2/violet.jpg?v=cards0926",
       status: "available",
       blurb:
         "Warm apricot curls with a gentle, affectionate look.",
@@ -231,7 +231,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Dark grey / black",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/cedar.jpg?v=cards0924",
+      image: "assets/pups/litter2/cedar.jpg?v=cards0926",
       status: "available",
       blurb:
         "Calm apricot curls with a soft white snout.",
@@ -242,7 +242,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Red",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/ginger.jpg?v=cards0924",
+      image: "assets/pups/litter2/ginger.jpg?v=cards0926",
       status: "available",
       blurb:
         "Warm apricot curls with bright eyes and a playful spark.",
@@ -253,7 +253,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Yellow",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/lotus.jpg?v=cards0924",
+      image: "assets/pups/litter2/lotus.jpg?v=cards0926",
       status: "available",
       blurb:
         "Warm apricot curls, cream muzzle, and a soft curious head tilt.",
@@ -264,7 +264,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Pink",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/meadow.jpg?v=cards0924",
+      image: "assets/pups/litter2/meadow.jpg?v=cards0926",
       status: "available",
       blurb:
         "Warm apricot curls and a calm, grounded little face.",
