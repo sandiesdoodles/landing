@@ -4,14 +4,14 @@
  */
 window.SANDIES = {
   brand: "Sandies Doodles",
-  tagline: "Family-raised Goldendoodles in Hobe Sound, Florida",
+  tagline: "Family-raised Goldendoodles in Martin County, Florida",
   status: {
     mode: "live",
     headline: "Available Now — Abby’s Litter 2",
     note: "8 puppies born August 2, 2026 · ready for new homes · reservations open.",
   },
   hero: {
-    headline: "Goldendoodle Puppies in Hobe Sound, Florida",
+    headline: "Goldendoodle Puppies in Martin County, Florida",
     support:
       "Oakley, Cypress, Cedar, Lotus, Delilah, Ginger, Violet, and Meadow — eight family-raised F2 Goldendoodles, born August 2, 2026 and ready for new homes.",
   },
@@ -56,7 +56,7 @@ window.SANDIES = {
     email: "SandiesDoodles1@gmail.com",
     phone: "(772) 530-7433",
     phoneHref: "tel:+17725307433",
-    location: "Hobe Sound, Florida",
+    location: "Martin County, Florida",
     facebook: "https://www.facebook.com/SandiesDoodles",
   },
   parents: [
@@ -103,7 +103,7 @@ window.SANDIES = {
   transport: {
     title: "Reservations & transport",
     intro:
-      "Local pickup in Hobe Sound is preferred. Buyer-paid transport may be available for approved families.",
+      "Local pickup in Martin County is preferred. Buyer-paid transport may be available for approved families.",
     rules: [
       "No puppy leaves before 8 weeks old",
       "Veterinary clearance + required health paperwork",
@@ -131,7 +131,7 @@ window.SANDIES = {
     {
       step: "03",
       title: "Meet your puppy",
-      text: "Photos, videos, and temperament notes — or a visit in Hobe Sound.",
+      text: "Photos, videos, and temperament notes — or a visit in Martin County.",
     },
     {
       step: "04",
@@ -154,7 +154,7 @@ window.SANDIES = {
     },
     {
       q: "Do you offer transport?",
-      a: "Local pickup in Hobe Sound is preferred. Buyer-paid options may be available for approved families: meet-up delivery, approved ground transporter, or flight nanny. Transport costs are separate from the puppy price.",
+      a: "Local pickup in Martin County is preferred. Buyer-paid options may be available for approved families: meet-up delivery, approved ground transporter, or flight nanny. Transport costs are separate from the puppy price.",
     },
     {
       q: "Are they AKC registered?",

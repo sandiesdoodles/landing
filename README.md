@@ -1,6 +1,6 @@
 # Sandies Doodles
 
-Family-raised Goldendoodles in Hobe Sound, Florida.
+Family-raised Goldendoodles in Martin County, Florida.
 
 ## Run locally
 

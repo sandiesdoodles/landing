@@ -21,7 +21,7 @@ This folder is the machine. Site waitlist already posts to Formspree; use that *
 | Deposit | $500 (opens week 3–4) |
 | Go-home | 8+ weeks, vet clearance, CVI, full payment |
 | Transport | Buyer-paid, separate, approved only |
-| Local pickup | Preferred (Hobe Sound) |
+| Local pickup | Preferred (Martin County) |
 
 ## Still need from you (not in repo)
 

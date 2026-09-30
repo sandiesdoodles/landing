@@ -1,6 +1,6 @@
 # Transport policy — Sandies Doodles
 
-Local pickup in Hobe Sound, Florida is preferred.
+Local pickup in Martin County, Florida is preferred.
 
 Buyer-paid transport may be available for **approved families only**. Transport is separate from the puppy price and depends on location and method.
 
