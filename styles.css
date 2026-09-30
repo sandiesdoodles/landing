@@ -583,6 +583,34 @@ a {
   color: #fff8f2;
 }
 
+.reserve-cta {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  text-align: center;
+}
+
+.reserve-cta p {
+  max-width: 34rem;
+  margin: 0 auto 1rem;
+}
+
+.reserve-cta .reserve-note {
+  margin: 0.85rem auto 0;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .reserve-cta .btn,
+  .contact-actions .puppy-reservation-cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
 .reserve-panel {
   margin-top: 1.5rem;
   border-top: 1px solid var(--line);

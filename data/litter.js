@@ -40,7 +40,7 @@ window.SANDIES = {
    * Reserve buttons fall back to the reservation section + call/text.
    */
   square: {
-    reserveUrl: "",
+    reserveUrl: "https://square.link/u/qB7DZKT4?src=embed",
   },
   reservation: {
     title: "Reserve a puppy",
@@ -199,7 +199,7 @@ window.SANDIES = {
   ],
   alumniNote:
     "Litter 1 puppies below are all placed — shared as a look at the dogs we raise.",
-  /** Set each puppy's status to "available" or "reserved". */
+  /** Set each puppy's status to "available", "reserved", or "sold". */
   litter2: [
     {
       id: "cypress",

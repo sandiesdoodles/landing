@@ -25,7 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=launch0930" />
+    <link rel="stylesheet" href="styles.css?v=sq0930" />
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -106,7 +106,7 @@
           <div class="hero-actions reveal delay-3">
             <a class="btn btn-primary" href="#litter">View Available Puppies</a>
             <a class="btn btn-ghost" id="heroSecondary" href="#inquire">Inquire About a Puppy</a>
-            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
+            <a class="btn btn-ghost" href="#reserve-cta">Reserve a Puppy</a>
           </div>
         </div>
       </section>
@@ -124,6 +124,24 @@
       <section class="section litter" id="litter">
         <div class="litter-panel" id="litterPanel"></div>
         <div class="pup-grid litter2-grid" id="litter2Grid" aria-label="Litter 2 puppies"></div>
+        <div class="reserve-cta reveal-on-scroll" id="reserve-cta">
+          <p>
+            Ready to reserve? A $500 deposit secures your selected puppy. You’ll enter the puppy’s
+            name during secure Square checkout.
+          </p>
+          <a
+            id="puppy-reservation-cta"
+            class="btn btn-primary puppy-reservation-cta"
+            href="https://square.link/u/qB7DZKT4?src=embed"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track="reserve_click"
+            >Reserve a Puppy — $500 Deposit</a
+          >
+          <p class="reserve-note">
+            Reservation is confirmed after successful payment and availability verification.
+          </p>
+        </div>
       </section>
 
       <section class="section parents" id="parents">
@@ -287,8 +305,15 @@
               rel="noopener"
               >Facebook page</a
             >
-            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
-            <a class="btn btn-primary" href="#inquire">Inquire About a Puppy</a>
+            <a class="btn btn-ghost" href="#inquire">Inquire About a Puppy</a>
+            <a
+              class="btn btn-primary puppy-reservation-cta"
+              href="https://square.link/u/qB7DZKT4?src=embed"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-track="reserve_click"
+              >Reserve a Puppy — $500 Deposit</a
+            >
           </div>
         </div>
       </section>
@@ -306,7 +331,7 @@
       <div class="dialog-body" id="dialogBody"></div>
     </dialog>
 
-    <script src="data/litter.js?v=launch0930"></script>
-    <script src="app.js?v=launch0930"></script>
+    <script src="data/litter.js?v=sq0930"></script>
+    <script src="app.js?v=sq0930"></script>
   </body>
 </html>

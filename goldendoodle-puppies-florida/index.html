@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.css?v=launch0930" />
+    <link rel="stylesheet" href="../styles.css?v=sq0930" />
   </head>
   <body>
     <header class="site-header is-elevated">
@@ -46,7 +46,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="#puppies">View Available Puppies</a>
             <a class="btn btn-ghost" href="../#inquire">Inquire About a Puppy</a>
-            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
+            <a class="btn btn-ghost" href="#reserve">Reserve a Puppy</a>
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@
             <p id="lpContact"></p>
           </div>
           <div class="contact-actions">
-            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
+            <a class="btn btn-ghost" href="#reserve">Reserve a Puppy</a>
             <a class="btn btn-primary" href="../#inquire">Inquire About a Puppy</a>
           </div>
         </div>
@@ -102,7 +102,7 @@
       <span class="footer-note"><a href="../">Full site</a></span>
     </footer>
 
-    <script src="../data/litter.js?v=launch0930"></script>
+    <script src="../data/litter.js?v=sq0930"></script>
     <script>
       (() => {
         const d = window.SANDIES;
@@ -116,7 +116,7 @@
         const sq = (d.square && d.square.reserveUrl) || "";
         const reserveAttrs = (name = "") =>
           sq
-            ? `href="${sq}" target="_blank" rel="noopener" data-track="reserve_click" data-pup-name="${name}"`
+            ? `href="${sq}" target="_blank" rel="noopener noreferrer" class="puppy-reservation-cta" data-track="reserve_click" data-pup-name="${name}"`
             : `href="#reserve" data-track="reserve_click" data-pup-name="${name}"`;
         const money = (n) =>
           Number(n).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -129,13 +129,14 @@
 
         document.getElementById("lpGrid").innerHTML = (d.litter2 || [])
           .map((p) => {
-            const reserved = p.status === "reserved";
+            const reserved = p.status === "reserved" || p.status === "sold";
+            const label = p.status === "sold" ? "Sold" : reserved ? "Reserved" : "Available";
             return `
             <article class="pup-card${reserved ? " is-reserved" : ""}">
               <img src="${up(p.image)}" alt="${p.name}, ${p.sex.toLowerCase()} Goldendoodle puppy" loading="lazy" />
               <div class="pup-meta">
                 <h3>${p.name}</h3>
-                <p class="meta-line">${p.sex} · <span class="pup-status">${reserved ? "Reserved" : "Available"}</span></p>
+                <p class="meta-line">${p.sex} · <span class="pup-status">${label}</span></p>
               </div>
               <div class="pup-actions">
                 <a href="../?pup=${encodeURIComponent(p.name)}#inquire">Inquire</a>
@@ -161,7 +162,11 @@
           <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
           ${
             sq
-              ? `<a class="btn btn-primary" ${reserveAttrs()}>Reserve a Puppy — $500 deposit</a>`
+              ? `<div class="reserve-cta">
+                   <p>Ready to reserve? A $500 deposit secures your selected puppy. You’ll enter the puppy’s name during secure Square checkout.</p>
+                   <a id="puppy-reservation-cta" ${reserveAttrs().replace('class="', 'class="btn btn-primary ')}>Reserve a Puppy — $500 Deposit</a>
+                   <p class="reserve-note">Reservation is confirmed after successful payment and availability verification.</p>
+                 </div>`
               : `<p class="meta-line">${r.fallback}</p>
                  <div class="reserve-actions">
                    <a class="btn btn-primary" href="${c.phoneHref}">Call ${c.phone}</a>
@@ -190,15 +195,6 @@
           Email: <a href="mailto:${c.email}">${c.email}</a><br />
           Call / text: <a href="${c.phoneHref}">${c.phone}</a> · <a href="${sms}">Send a text</a><br />
           ${c.location}`;
-
-        document.querySelectorAll(".js-reserve").forEach((a) => {
-          if (sq) {
-            a.href = sq;
-            a.target = "_blank";
-            a.rel = "noopener";
-          }
-          a.dataset.track = "reserve_click";
-        });
 
         document.addEventListener("click", (e) => {
           const t = e.target.closest("[data-track]");

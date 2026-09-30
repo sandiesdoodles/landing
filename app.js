@@ -21,11 +21,12 @@
   };
 
   const squareUrl = (data.square && data.square.reserveUrl) || "";
-  const isReserved = (pup) => pup.status === "reserved";
-  const statusLabel = (pup) => (isReserved(pup) ? "Reserved" : "Available");
+  const isReserved = (pup) => pup.status === "reserved" || pup.status === "sold";
+  const statusLabel = (pup) =>
+    pup.status === "sold" ? "Sold" : pup.status === "reserved" ? "Reserved" : "Available";
   const reserveAttrs = (pupName = "") =>
     squareUrl
-      ? `href="${squareUrl}" target="_blank" rel="noopener" data-track="reserve_click" data-pup-name="${pupName}"`
+      ? `href="${squareUrl}" target="_blank" rel="noopener noreferrer" class="puppy-reservation-cta" data-track="reserve_click" data-pup-name="${pupName}"`
       : `href="#reserve" data-track="reserve_click" data-pup-name="${pupName}"`;
 
   const banner = document.getElementById("siteBanner");
@@ -157,7 +158,7 @@
     data.litter2.forEach((pup) => {
       const opt = document.createElement("option");
       opt.value = pup.name;
-      opt.textContent = `${pup.name} (${pup.sex}${isReserved(pup) ? " · reserved" : ""})`;
+      opt.textContent = `${pup.name} (${pup.sex}${isReserved(pup) ? ` · ${statusLabel(pup).toLowerCase()}` : ""})`;
       puppySelect.insertBefore(opt, puppySelect.lastElementChild);
     });
     const wanted = new URLSearchParams(window.location.search).get("pup");
@@ -179,15 +180,6 @@
     }
   });
 
-  document.querySelectorAll(".js-reserve").forEach((a) => {
-    if (squareUrl) {
-      a.href = squareUrl;
-      a.target = "_blank";
-      a.rel = "noopener";
-    }
-    a.dataset.track = "reserve_click";
-  });
-
   const reservePanel = document.getElementById("reserve");
   if (reservePanel && data.reservation) {
     const r = data.reservation;
@@ -197,7 +189,7 @@
       <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
       ${
         squareUrl
-          ? `<a class="btn btn-primary" ${reserveAttrs()}>Reserve a Puppy — $500 deposit</a>`
+          ? `<a class="btn btn-ghost" href="#reserve-cta">Reserve a Puppy</a>`
           : `<p class="meta-line">${r.fallback}</p>
              <div class="reserve-actions">
                <a class="btn btn-primary" href="${c0.phoneHref}">Call ${c0.phone}</a>
@@ -381,7 +373,7 @@
           litter === "2"
             ? `<div class="reserve-actions">
                  <a class="btn btn-primary" href="#inquire" data-inquire="${pup.name}">Inquire about ${pup.name}</a>
-                 ${isReserved(pup) ? "" : `<a class="btn btn-ghost" ${reserveAttrs(pup.name)}>Reserve ${pup.name}</a>`}
+                 ${isReserved(pup) ? "" : `<a ${reserveAttrs(pup.name).replace('class="', 'class="btn btn-ghost ')}>Reserve ${pup.name}</a>`}
                </div>`
             : ""
         }
