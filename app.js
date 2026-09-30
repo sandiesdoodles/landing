@@ -14,6 +14,20 @@
     });
   };
 
+  const track = (event, params = {}) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event, ...params });
+    if (typeof window.gtag === "function") window.gtag("event", event, params);
+  };
+
+  const squareUrl = (data.square && data.square.reserveUrl) || "";
+  const isReserved = (pup) => pup.status === "reserved";
+  const statusLabel = (pup) => (isReserved(pup) ? "Reserved" : "Available");
+  const reserveAttrs = (pupName = "") =>
+    squareUrl
+      ? `href="${squareUrl}" target="_blank" rel="noopener" data-track="reserve_click" data-pup-name="${pupName}"`
+      : `href="#reserve" data-track="reserve_click" data-pup-name="${pupName}"`;
+
   const banner = document.getElementById("siteBanner");
   if (banner && data.status?.headline) {
     banner.hidden = false;
@@ -121,15 +135,75 @@
     litter2Grid.innerHTML = data.litter2
       .map(
         (pup) => `
-      <button class="pup-card reveal-on-scroll" type="button" data-pup="${pup.id}" data-litter="2">
-        <img src="${pup.image}" alt="${pup.name}" loading="lazy" />
-        <div class="pup-meta">
-          <h3>${pup.name}</h3>
-          <p class="meta-line">${pup.sex} · Available</p>
+      <article class="pup-card reveal-on-scroll${isReserved(pup) ? " is-reserved" : ""}">
+        <button class="pup-open" type="button" data-pup="${pup.id}" data-litter="2">
+          <img src="${pup.image}" alt="${pup.name}, ${pup.sex.toLowerCase()} Goldendoodle puppy" loading="lazy" />
+          <div class="pup-meta">
+            <h3>${pup.name}</h3>
+            <p class="meta-line">${pup.sex} · <span class="pup-status">${statusLabel(pup)}</span></p>
+          </div>
+        </button>
+        <div class="pup-actions">
+          <a href="#inquire" data-inquire="${pup.name}">Inquire</a>
+          ${isReserved(pup) ? "" : `<a ${reserveAttrs(pup.name)}>Reserve</a>`}
         </div>
-      </button>`
+      </article>`
       )
       .join("");
+  }
+
+  const puppySelect = document.getElementById("puppySelect");
+  if (puppySelect && data.litter2) {
+    data.litter2.forEach((pup) => {
+      const opt = document.createElement("option");
+      opt.value = pup.name;
+      opt.textContent = `${pup.name} (${pup.sex}${isReserved(pup) ? " · reserved" : ""})`;
+      puppySelect.insertBefore(opt, puppySelect.lastElementChild);
+    });
+    const wanted = new URLSearchParams(window.location.search).get("pup");
+    if (wanted && data.litter2.some((p) => p.name === wanted)) puppySelect.value = wanted;
+  }
+
+  document.addEventListener("click", (e) => {
+    const inq = e.target.closest("[data-inquire]");
+    if (inq && puppySelect) {
+      puppySelect.value = inq.dataset.inquire;
+      if (typeof dialog?.close === "function" && dialog.open) dialog.close();
+    }
+    const tracked = e.target.closest("[data-track]");
+    if (tracked) track(tracked.dataset.track, { puppy: tracked.dataset.pupName || "" });
+    const link = e.target.closest("a[href^='tel:'], a[href^='sms:'], a[href^='mailto:']");
+    if (link) {
+      const scheme = link.getAttribute("href").split(":")[0];
+      track(scheme === "tel" ? "phone_click" : scheme === "sms" ? "text_click" : "email_click");
+    }
+  });
+
+  document.querySelectorAll(".js-reserve").forEach((a) => {
+    if (squareUrl) {
+      a.href = squareUrl;
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+    a.dataset.track = "reserve_click";
+  });
+
+  const reservePanel = document.getElementById("reserve");
+  if (reservePanel && data.reservation) {
+    const r = data.reservation;
+    const c0 = data.contact;
+    reservePanel.innerHTML = `
+      <h3>${r.title}</h3>
+      <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
+      ${
+        squareUrl
+          ? `<a class="btn btn-primary" ${reserveAttrs()}>Reserve a Puppy — $500 deposit</a>`
+          : `<p class="meta-line">${r.fallback}</p>
+             <div class="reserve-actions">
+               <a class="btn btn-primary" href="${c0.phoneHref}">Call ${c0.phone}</a>
+               <a class="btn btn-ghost" href="sms:${c0.phoneHref.replace("tel:", "")}">Text us</a>
+             </div>`
+      }`;
   }
 
   const pupGrid = document.getElementById("pupGrid");
@@ -259,7 +333,7 @@
   const c = data.contact;
   document.getElementById("contactBlock").innerHTML = `
     Email: <a href="mailto:${c.email}">${c.email}</a><br />
-    Call / text: <a href="${c.phoneHref}">${c.phone}</a><br />
+    Call / text: <a href="${c.phoneHref}">${c.phone}</a> · <a href="sms:${c.phoneHref.replace("tel:", "")}">Send a text</a><br />
     ${c.location}`;
 
   ["fbLink", "headerFb", "headerFbMobile"].forEach((id) => {
@@ -282,7 +356,7 @@
 
   if (litter2Grid) {
     litter2Grid.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-pup]");
+      const btn = e.target.closest("button[data-pup]");
       if (!btn) return;
       openPupDialog(btn.dataset.pup, "2");
     });
@@ -301,9 +375,16 @@
         <p class="meta-line">Status: ${
           pup.status === "placed"
             ? "Placed in Litter 1 — alumni, not available"
-            : "Available · Litter 2"
+            : `${statusLabel(pup)} · Litter 2`
         }</p>
-        <p class="meta-line"><a href="#waitlist">Join the early list →</a></p>
+        ${
+          litter === "2"
+            ? `<div class="reserve-actions">
+                 <a class="btn btn-primary" href="#inquire" data-inquire="${pup.name}">Inquire about ${pup.name}</a>
+                 ${isReserved(pup) ? "" : `<a class="btn btn-ghost" ${reserveAttrs(pup.name)}>Reserve ${pup.name}</a>`}
+               </div>`
+            : ""
+        }
       </div>`;
     if (typeof dialog.showModal === "function") dialog.showModal();
   }
@@ -319,9 +400,8 @@
 
     const fd = new FormData(form);
     const entry = Object.fromEntries(fd.entries());
-    entry.budgetReady = fd.get("budgetReady") === "yes";
     entry.savedAt = new Date().toISOString();
-    entry.type = "Early list";
+    entry.type = "Puppy inquiry";
 
     const key = "sandies_early_list";
     const prev = JSON.parse(localStorage.getItem(key) || "[]");
@@ -338,8 +418,7 @@
 
     try {
       const body = new FormData(form);
-      body.set("type", "Early list");
-      body.set("budgetReady", entry.budgetReady ? "yes" : "no");
+      body.set("type", "Puppy inquiry");
       body.set("litter", "Abby Litter 2");
       body.set("source", window.location.href);
       const res = await fetch(endpoint, {
@@ -348,6 +427,7 @@
         headers: { Accept: "application/json" },
       });
       if (!res.ok) throw new Error(`Formspree ${res.status}`);
+      track("generate_lead", { puppy: entry.puppy || "" });
       form.reset();
       status.textContent = "Got it — redirecting…";
       setTimeout(() => {

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Goldendoodle Puppies for Sale in Florida | Sandies Doodles, Hobe Sound</title>
+    <meta
+      name="description"
+      content="F2 Goldendoodle puppies available now in Hobe Sound, Florida. Family-raised, vet-checked, $2,400 with a $500 reservation deposit."
+    />
+    <link rel="canonical" href="https://sandiesdoodles.com/goldendoodle-puppies-florida/" />
+    <meta name="theme-color" content="#1e3a32" />
+    <link rel="icon" href="../assets/brand/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css?v=launch0930" />
+  </head>
+  <body>
+    <header class="site-header is-elevated">
+      <a class="brand-lockup" href="../">
+        <img src="../assets/brand/logo.png" alt="" width="48" height="36" />
+        <span>Sandies Doodles</span>
+      </a>
+      <div class="header-actions">
+        <a class="nav-cta" href="../#inquire">Inquire</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-media" aria-hidden="true">
+          <img class="hero-photo" src="../assets/brand/hero-poster.jpg" alt="" fetchpriority="high" />
+          <div class="hero-veil"></div>
+        </div>
+        <div class="hero-copy">
+          <p class="hero-brand">Sandies Doodles</p>
+          <h1>Goldendoodle Puppies Available Now in Florida</h1>
+          <p class="hero-support" id="lpSupport">
+            Eight family-raised F2 Goldendoodles, born August 2, 2026 and ready for new
+            homes. $2,400 · $500 reserves your puppy.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#puppies">View Available Puppies</a>
+            <a class="btn btn-ghost" href="../#inquire">Inquire About a Puppy</a>
+            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section litter" id="puppies">
+        <div class="section-intro">
+          <h2>Available puppies</h2>
+          <p id="lpLitterLine"></p>
+        </div>
+        <div class="pup-grid litter2-grid" id="lpGrid" aria-label="Available puppies"></div>
+      </section>
+
+      <section class="section pricing" id="pricing">
+        <div class="section-intro">
+          <h2>Price &amp; reservation</h2>
+          <p id="lpPriceLabel"></p>
+        </div>
+        <div class="price-panel" id="lpPrice"></div>
+        <div class="reserve-panel" id="reserve"></div>
+      </section>
+
+      <section class="section parents" id="parents">
+        <div class="section-intro">
+          <h2>Meet the parents</h2>
+          <p id="lpGenetics"></p>
+        </div>
+        <div class="parent-grid" id="lpParents"></div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-intro">
+          <h2>Health &amp; common questions</h2>
+        </div>
+        <div class="faq-list" id="lpFaq"></div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-row">
+          <div>
+            <h2>Contact</h2>
+            <p id="lpContact"></p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-ghost js-reserve" href="#reserve">Reserve a Puppy</a>
+            <a class="btn btn-primary" href="../#inquire">Inquire About a Puppy</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Sandies Doodles · Hobe Sound, Florida</span>
+      <span class="footer-note"><a href="../">Full site</a></span>
+    </footer>
+
+    <script src="../data/litter.js?v=launch0930"></script>
+    <script>
+      (() => {
+        const d = window.SANDIES;
+        if (!d) return;
+        const up = (p) => (p && !/^(https?:|\/)/.test(p) ? `../${p}` : p);
+        const track = (event, params = {}) => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event, ...params });
+          if (typeof window.gtag === "function") window.gtag("event", event, params);
+        };
+        const sq = (d.square && d.square.reserveUrl) || "";
+        const reserveAttrs = (name = "") =>
+          sq
+            ? `href="${sq}" target="_blank" rel="noopener" data-track="reserve_click" data-pup-name="${name}"`
+            : `href="#reserve" data-track="reserve_click" data-pup-name="${name}"`;
+        const money = (n) =>
+          Number(n).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+        const c = d.contact;
+        const sms = `sms:${c.phoneHref.replace("tel:", "")}`;
+
+        document.getElementById("year").textContent = String(new Date().getFullYear());
+        const lit = d.currentLitter || {};
+        document.getElementById("lpLitterLine").textContent = `${lit.eyebrow || ""} · ${lit.headline || ""}`;
+
+        document.getElementById("lpGrid").innerHTML = (d.litter2 || [])
+          .map((p) => {
+            const reserved = p.status === "reserved";
+            return `
+            <article class="pup-card${reserved ? " is-reserved" : ""}">
+              <img src="${up(p.image)}" alt="${p.name}, ${p.sex.toLowerCase()} Goldendoodle puppy" loading="lazy" />
+              <div class="pup-meta">
+                <h3>${p.name}</h3>
+                <p class="meta-line">${p.sex} · <span class="pup-status">${reserved ? "Reserved" : "Available"}</span></p>
+              </div>
+              <div class="pup-actions">
+                <a href="../?pup=${encodeURIComponent(p.name)}#inquire">Inquire</a>
+                ${reserved ? "" : `<a ${reserveAttrs(p.name)}>Reserve</a>`}
+              </div>
+            </article>`;
+          })
+          .join("");
+
+        document.getElementById("lpPriceLabel").textContent = d.pricing.label;
+        document.getElementById("lpPrice").innerHTML = `
+          <div class="price-hero">
+            <div class="amount">${money(d.pricing.base)}</div>
+            <div class="deposit">Deposit ${money(d.pricing.deposit)} to reserve
+              <span class="deposit-note">${d.pricing.depositTiming || ""}</span></div>
+          </div>
+          <p><strong>Included</strong></p>
+          <ul class="includes">${d.pricing.includes.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+
+        const r = d.reservation;
+        document.getElementById("reserve").innerHTML = `
+          <h3>${r.title}</h3>
+          <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
+          ${
+            sq
+              ? `<a class="btn btn-primary" ${reserveAttrs()}>Reserve a Puppy — $500 deposit</a>`
+              : `<p class="meta-line">${r.fallback}</p>
+                 <div class="reserve-actions">
+                   <a class="btn btn-primary" href="${c.phoneHref}">Call ${c.phone}</a>
+                   <a class="btn btn-ghost" href="${sms}">Text us</a>
+                 </div>`
+          }`;
+
+        document.getElementById("lpGenetics").textContent = `${d.genetics.generation}. ${d.genetics.adultSize}`;
+        document.getElementById("lpParents").innerHTML = d.parents
+          .map(
+            (p) => `
+            <article class="parent">
+              <img src="${up(p.image)}" alt="${p.name}" loading="lazy" />
+              <div><h3>${p.name}</h3><p class="role">${p.role} · ${p.weight}</p><p>${p.blurb}</p></div>
+            </article>`
+          )
+          .join("");
+
+        const keep = /health|go home|big|generation|transport|cost|deposit/i;
+        document.getElementById("lpFaq").innerHTML = d.faqs
+          .filter((f) => keep.test(f.q))
+          .map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></details>`)
+          .join("");
+
+        document.getElementById("lpContact").innerHTML = `
+          Email: <a href="mailto:${c.email}">${c.email}</a><br />
+          Call / text: <a href="${c.phoneHref}">${c.phone}</a> · <a href="${sms}">Send a text</a><br />
+          ${c.location}`;
+
+        document.querySelectorAll(".js-reserve").forEach((a) => {
+          if (sq) {
+            a.href = sq;
+            a.target = "_blank";
+            a.rel = "noopener";
+          }
+          a.dataset.track = "reserve_click";
+        });
+
+        document.addEventListener("click", (e) => {
+          const t = e.target.closest("[data-track]");
+          if (t) track(t.dataset.track, { puppy: t.dataset.pupName || "" });
+          const l = e.target.closest("a[href^='tel:'], a[href^='sms:'], a[href^='mailto:']");
+          if (l) {
+            const s = l.getAttribute("href").split(":")[0];
+            track(s === "tel" ? "phone_click" : s === "sms" ? "text_click" : "email_click");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
