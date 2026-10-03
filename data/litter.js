@@ -284,7 +284,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Pink",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/real/meadow.jpg?v=real0930",
+      image: "assets/pups/litter2/profile/meadow.jpg?v=p1003",
       status: "available",
       blurb:
         "Warm apricot curls and a calm, grounded little face.",
