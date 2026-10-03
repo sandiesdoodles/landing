@@ -218,7 +218,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Grey / blaze",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/real/oakley.jpg?v=real0930",
+      image: "assets/pups/litter2/profile/oakley.jpg?v=p1003",
       status: "available",
       blurb:
         "White forehead blaze, warm curls, and a soft, steady look.",
