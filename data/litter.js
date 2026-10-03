@@ -207,7 +207,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Lime",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/real/cypress.jpg?v=real0930",
+      image: "assets/pups/litter2/profile/cypress.jpg?v=p1003",
       status: "available",
       blurb:
         "Warm apricot curls, pale muzzle, and a confident little stare.",
