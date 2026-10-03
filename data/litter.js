@@ -251,7 +251,7 @@ window.SANDIES = {
       sex: "Male",
       collar: "Dark grey / black",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/real/cedar.jpg?v=real0930",
+      image: "assets/pups/litter2/profile/cedar.jpg?v=p1003",
       status: "available",
       blurb:
         "Calm apricot curls with a soft white snout.",
