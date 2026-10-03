@@ -273,7 +273,7 @@ window.SANDIES = {
       sex: "Female",
       collar: "Yellow",
       size: "~30–40 lb adult estimate",
-      image: "assets/pups/litter2/real/lotus.jpg?v=real0930",
+      image: "assets/pups/litter2/profile/lotus.jpg?v=p1003",
       status: "available",
       blurb:
         "Warm apricot curls, cream muzzle, and a soft curious head tilt.",
