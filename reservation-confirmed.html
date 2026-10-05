@@ -13,6 +13,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css?v=mc0930" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-276VDLEJ9T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-276VDLEJ9T");
+    </script>
   </head>
   <body class="thanks-page">
     <main class="thanks">
@@ -27,8 +34,7 @@
       </div>
     </main>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: "reservation_complete", value: 500, currency: "USD" });
+      gtag("event", "reservation_complete", { value: 500, currency: "USD" });
     </script>
   </body>
 </html>
