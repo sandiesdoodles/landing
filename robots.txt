@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /thank-you.html
+Disallow: /reservation-confirmed
+
+Sitemap: https://sandiesdoodles.com/sitemap.xml
