@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles.css?v=mc0930" />
+    <link rel="stylesheet" href="../styles.css?v=terms1005" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-276VDLEJ9T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -109,7 +109,7 @@
       <span class="footer-note"><a href="../">Full site</a> · <a href="../privacy.html">Privacy</a></span>
     </footer>
 
-    <script src="../data/litter.js?v=p1003h"></script>
+    <script src="../data/litter.js?v=terms1005"></script>
     <script>
       (() => {
         const d = window.SANDIES;
@@ -166,13 +166,14 @@
         const r = d.reservation;
         document.getElementById("reserve").innerHTML = `
           <h3>${r.title}</h3>
-          <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
+          ${r.terms.map((t) => `<p>${t}</p>`).join("")}
+          ${r.lawNote ? `<p class="meta-line">${r.lawNote}</p>` : ""}
           ${
             sq
               ? `<div class="reserve-cta">
                    <p>Ready to reserve? A $500 deposit secures your selected puppy. You’ll select your puppy during secure Square checkout.</p>
                    <a id="puppy-reservation-cta" ${reserveAttrs().replace('class="', 'class="btn btn-primary ')}>Reserve a Puppy — $500 Deposit</a>
-                   <p class="reserve-note">Reservation is confirmed after successful payment and availability verification.</p>
+                   <p class="reserve-note">A reservation is confirmed once the deposit is received and Sandies Doodles confirms the selected puppy. By submitting the deposit, you agree to the reservation terms above.</p>
                  </div>`
               : `<p class="meta-line">${r.fallback}</p>
                  <div class="reserve-actions">
@@ -192,7 +193,7 @@
           )
           .join("");
 
-        const keep = /health|go home|big|generation|transport|cost|deposit/i;
+        const keep = /health|go home|big|generation|transport|cost|deposit|balance|pick up|pickup/i;
         document.getElementById("lpFaq").innerHTML = d.faqs
           .filter((f) => keep.test(f.q))
           .map((f) => `<details><summary>${f.q}</summary><p>${f.a}</p></details>`)

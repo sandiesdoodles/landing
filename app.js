@@ -186,7 +186,8 @@
     const c0 = data.contact;
     reservePanel.innerHTML = `
       <h3>${r.title}</h3>
-      <ul class="includes">${r.points.map((p) => `<li>${p}</li>`).join("")}</ul>
+      ${r.terms.map((t) => `<p>${t}</p>`).join("")}
+      ${r.lawNote ? `<p class="meta-line">${r.lawNote}</p>` : ""}
       ${
         squareUrl
           ? `<a class="btn btn-ghost" href="#reserve-cta">Reserve a Puppy</a>`

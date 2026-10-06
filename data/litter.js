@@ -43,12 +43,19 @@ window.SANDIES = {
     reserveUrl: "https://square.link/u/qB7DZKT4?src=embed",
   },
   reservation: {
-    title: "Reserve a puppy",
-    points: [
-      "A $500 deposit reserves one specific puppy.",
-      "The $500 applies toward the $2,400 total puppy price.",
-      "The remaining balance is due at pickup.",
+    title: "$500 Puppy Reservation Deposit",
+    terms: [
+      "A $500 deposit reserves your selected puppy and is applied toward the final purchase price.",
+      "Deposits are non-refundable if the buyer cancels, changes their mind, or decides not to complete the purchase.",
+      "If Sandies Doodles cannot provide the selected puppy due to health, availability, or another breeder-related reason, the buyer may choose either a full refund of the deposit or transfer of the deposit to another available puppy.",
+      "A reservation is confirmed once the deposit is received and Sandies Doodles confirms the selected puppy.",
+      "The remaining balance is due 48 hours before scheduled pickup. The Puppy Purchase Agreement must be signed before the puppy goes home.",
+      "If pickup is delayed, a 48-hour grace period is allowed when the buyer remains in communication. After that period, a $25/day boarding fee may apply.",
+      "If the buyer does not respond within 72 hours after the scheduled pickup time, Sandies Doodles may cancel the reservation, make the puppy available again, and retain the deposit.",
+      "By submitting the reservation deposit, the buyer acknowledges and agrees to these reservation terms.",
     ],
+    lawNote:
+      "These reservation terms do not limit any rights buyers have under Florida law, including Florida’s pet sale law.",
     fallback:
       "Online reservations are being set up. To reserve now, call or text us with the puppy’s name.",
   },
@@ -90,7 +97,7 @@ window.SANDIES = {
     base: 2400,
     deposit: 500,
     currency: "USD",
-    depositTiming: "Deposit applies toward the total price · balance due at pickup.",
+    depositTiming: "Deposit applies toward the total price · balance due 48 hours before pickup.",
     includes: [
       "Wellness exam + certificate of veterinary inspection before go-home",
       "Age-appropriate vaccines & deworming log",
@@ -107,7 +114,8 @@ window.SANDIES = {
     rules: [
       "No puppy leaves before 8 weeks old",
       "Veterinary clearance + required health paperwork",
-      "Full payment cleared before pickup or transport",
+      "Remaining balance paid 48 hours before pickup or transport",
+      "Puppy Purchase Agreement signed before go-home",
       "Transport costs are separate from the puppy price",
     ],
     options: [
@@ -126,7 +134,7 @@ window.SANDIES = {
     {
       step: "02",
       title: "Reserve with a deposit",
-      text: "$500 reserves one specific puppy and applies toward the total price.",
+      text: "$500 reserves your selected puppy and applies toward the total price. We confirm your puppy, then send the Puppy Purchase Agreement.",
     },
     {
       step: "03",
@@ -136,7 +144,7 @@ window.SANDIES = {
     {
       step: "04",
       title: "Go-home day",
-      text: "Vet clearance, paperwork, remaining balance at pickup — then home you go.",
+      text: "Balance paid 48 hours before pickup, agreement signed, vet clearance and paperwork ready — then home you go.",
     },
   ],
   faqs: [
@@ -150,7 +158,7 @@ window.SANDIES = {
     },
     {
       q: "When can a puppy go home?",
-      a: "Not before 8 weeks. Every puppy leaves only after veterinary clearance, required health paperwork, and full payment.",
+      a: "Not before 8 weeks. Every puppy leaves only after the remaining balance is paid, the Puppy Purchase Agreement is signed, and veterinary clearance and required health paperwork are ready.",
     },
     {
       q: "Do you offer transport?",
@@ -161,16 +169,28 @@ window.SANDIES = {
       a: "Goldendoodles are not AKC-recognized as a purebred. We focus on health, temperament, and honest lineage notes.",
     },
     {
-      q: "What does the deposit cover?",
-      a: "A $500 deposit reserves your place and applies to the final price. It is non-refundable if you back out; refundable or transferable if we cannot provide a puppy for health or breeder reasons. Written agreement required before payment.",
+      q: "Is the $500 reservation deposit refundable?",
+      a: "The $500 reservation deposit is applied toward the final puppy price and is non-refundable if the buyer cancels, changes their mind, or decides not to complete the purchase. If Sandies Doodles cannot provide the selected puppy due to health, availability, or another breeder-related reason, the buyer may choose a full refund or transfer the deposit to another available puppy.",
+    },
+    {
+      q: "When is the remaining balance due?",
+      a: "The remaining balance is due 48 hours before the scheduled pickup.",
+    },
+    {
+      q: "What happens if I need to pick up later?",
+      a: "A 48-hour grace period is allowed when you stay in communication with Sandies Doodles. After that, a $25/day boarding fee may apply.",
+    },
+    {
+      q: "What happens if I miss pickup and stop responding?",
+      a: "If we do not hear from you within 72 hours after the scheduled pickup time, Sandies Doodles may cancel the reservation, make the puppy available again, and the reservation deposit remains non-refundable.",
     },
     {
       q: "Are reservations open?",
-      a: "Yes. The puppies were born August 2, 2026 and are ready for new homes. A $500 deposit reserves one specific puppy.",
+      a: "Yes. The puppies were born August 2, 2026 and are ready for new homes. A $500 deposit reserves your selected puppy.",
     },
     {
       q: "How much do the puppies cost?",
-      a: "$2,400 per puppy. The $500 reservation deposit applies toward that total, and the remaining balance is due at pickup.",
+      a: "$2,400 per puppy. The $500 reservation deposit applies toward that total, and the remaining balance is due 48 hours before the scheduled pickup.",
     },
     {
       q: "What health steps do puppies get?",
