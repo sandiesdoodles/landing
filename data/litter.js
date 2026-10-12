@@ -296,7 +296,7 @@ window.SANDIES = {
       size: "~30–40 lb adult estimate",
       image: "assets/pups/litter2/profile/lotus.jpg?v=p1003",
       status: "available",
-      gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/lotus/0${n}.jpg`),
+      gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/lotus/0${n}.jpg?v=2`),
       blurb:
         "Warm apricot curls, cream muzzle, and a soft curious head tilt.",
     },
