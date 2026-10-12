@@ -8,12 +8,12 @@ window.SANDIES = {
   status: {
     mode: "live",
     headline: "Available Now — Abby’s Litter 2",
-    note: "8 puppies born August 2, 2026 · ready for new homes · reservations open.",
+    note: "8 puppies born August 2, 2026 · going home at the end of October · reservations open.",
   },
   hero: {
     headline: "Goldendoodle Puppies in Martin County, Florida",
     support:
-      "Oakley, Cypress, Cedar, Lotus, Delilah, Ginger, Violet, and Meadow — eight family-raised F2 Goldendoodles, born August 2, 2026 and ready for new homes.",
+      "Oakley, Cypress, Cedar, Lotus, Delilah, Ginger, Violet, and Meadow — eight family-raised F2 Goldendoodles, born August 2, 2026 and going home at the end of October.",
   },
   heroSecondary: {
     label: "Inquire About a Puppy",
@@ -22,7 +22,7 @@ window.SANDIES = {
   currentLitter: {
     title: "Available now",
     eyebrow: "Abby × Oliver · F2 Goldendoodles · Born August 2, 2026",
-    headline: "8 puppies · 5 girls · 3 boys · Ready for new homes",
+    headline: "8 puppies · 5 girls · 3 boys · Going home end of October",
     blurb:
       "Reservations are open. Tap a puppy for details, then inquire or reserve.",
     dob: "2026-08-02",
@@ -39,6 +39,7 @@ window.SANDIES = {
    * here (e.g. from Square Online Checkout). Leave "" until it exists —
    * Reserve buttons fall back to the reservation section + call/text.
    */
+  goHome: "Goes home Oct 31",
   square: {
     reserveUrl: "https://square.link/u/qB7DZKT4?src=embed",
   },
@@ -90,7 +91,7 @@ window.SANDIES = {
     generation: "F2 Goldendoodles",
     generationNote:
       "Both parents are Goldendoodles (Goldendoodle × Goldendoodle = F2). Coat and shed can vary; we do not currently produce F1B.",
-    adultSize: "About 30–40 lb at maturity (based on 22 lb mom / 44 lb dad)",
+    adultSize: "About 25–40 lb at maturity — girls ~25–35 lb, boys ~30–40 lb (based on 22 lb mom / 44 lb dad)",
   },
   pricing: {
     label: "$2,400 per puppy. Reservations open — $500 deposit reserves your puppy.",
@@ -154,7 +155,7 @@ window.SANDIES = {
     },
     {
       q: "How big will they get?",
-      a: "Most land around 30–40 lb as adults, based on Abby (22 lb) and Oliver (44 lb).",
+      a: "Most will land around 25–40 lb as adults — girls usually ~25–35 lb and boys ~30–40 lb — based on Abby (22 lb) and Oliver (44 lb). F2 Goldendoodles can vary.",
     },
     {
       q: "When can a puppy go home?",
@@ -186,7 +187,7 @@ window.SANDIES = {
     },
     {
       q: "Are reservations open?",
-      a: "Yes. The puppies were born August 2, 2026 and are ready for new homes. A $500 deposit reserves your selected puppy.",
+      a: "Yes. The puppies were born August 2, 2026 and go home at the end of October. A $500 deposit reserves your selected puppy now.",
     },
     {
       q: "How much do the puppies cost?",
@@ -248,7 +249,7 @@ window.SANDIES = {
       name: "Delilah",
       sex: "Female",
       collar: "Blue / cyan",
-      size: "~30–40 lb adult estimate",
+      size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/delilah.jpg?v=p1003",
       status: "available",
       blurb:
@@ -259,7 +260,7 @@ window.SANDIES = {
       name: "Violet",
       sex: "Female",
       collar: "Purple",
-      size: "~30–40 lb adult estimate",
+      size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/violet.jpg?v=p1003",
       status: "available",
       blurb:
@@ -281,7 +282,7 @@ window.SANDIES = {
       name: "Ginger",
       sex: "Female",
       collar: "Red",
-      size: "~30–40 lb adult estimate",
+      size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/ginger.jpg?v=p1003",
       status: "available",
       gallery: [1, 2, 3, 4, 5, 6, 7].map((n) => `assets/pups/litter2/gallery/ginger/0${n}.jpg`),
@@ -293,7 +294,7 @@ window.SANDIES = {
       name: "Lotus",
       sex: "Female",
       collar: "Yellow",
-      size: "~30–40 lb adult estimate",
+      size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/lotus.jpg?v=p1003",
       status: "available",
       gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/lotus/0${n}.jpg?v=3`),
@@ -305,7 +306,7 @@ window.SANDIES = {
       name: "Meadow",
       sex: "Female",
       collar: "Pink",
-      size: "~30–40 lb adult estimate",
+      size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/meadow.jpg?v=p1003",
       status: "available",
       gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/meadow/0${n}.jpg`),
