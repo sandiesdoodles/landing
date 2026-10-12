@@ -339,6 +339,11 @@
   document.getElementById("dialogClose").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (e) => {
     if (e.target === dialog) dialog.close();
+    const thumb = e.target.closest(".dialog-thumb");
+    if (thumb) {
+      dialogBody.querySelector(".dialog-main").src = thumb.dataset.src;
+      dialogBody.querySelectorAll(".dialog-thumb").forEach((t) => t.classList.toggle("is-active", t === thumb));
+    }
   });
 
   pupGrid.addEventListener("click", (e) => {
@@ -359,8 +364,19 @@
     const list = litter === "2" ? data.litter2 || [] : data.pups;
     const pup = list.find((p) => p.id === id);
     if (!pup) return;
+    const photos = [pup.image, ...(pup.gallery || [])];
     dialogBody.innerHTML = `
-      <img src="${pup.image}" alt="${pup.name}" />
+      <img class="dialog-main" src="${pup.image}" alt="${pup.name}" />
+      ${
+        photos.length > 1
+          ? `<div class="dialog-thumbs">${photos
+              .map(
+                (src, i) =>
+                  `<button type="button" class="dialog-thumb${i === 0 ? " is-active" : ""}" data-src="${src}" aria-label="${pup.name} photo ${i + 1}"><img src="${src}" alt="" loading="lazy" /></button>`
+              )
+              .join("")}</div>`
+          : ""
+      }
       <div class="dialog-copy">
         <h3>${pup.name}</h3>
         <p class="meta-line">${[pup.sex, pup.size].filter(Boolean).join(" · ")}</p>

@@ -990,6 +990,42 @@ a {
   border-radius: 18px 18px 0 0;
 }
 
+.dialog-body .dialog-main {
+  object-fit: contain;
+  background: #e2e9ea;
+}
+
+.dialog-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0 1.2rem;
+}
+
+.dialog-thumb {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  background: none;
+  cursor: pointer;
+}
+
+.dialog-thumb.is-active {
+  border-color: var(--apricot);
+}
+
+.dialog-body .dialog-thumb img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 0;
+}
+
 .dialog-copy {
   padding: 0 1.2rem 1.3rem;
 }

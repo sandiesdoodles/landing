@@ -219,7 +219,7 @@ window.SANDIES = {
   ],
   alumniNote:
     "Litter 1 puppies below are all placed — shared as a look at the dogs we raise.",
-  /** Set each puppy's status to "available", "reserved", or "sold". */
+  /** Set each puppy's status to "available", "reserved", or "sold". Optional gallery: list of extra photo paths. */
   litter2: [
     {
       id: "cypress",
@@ -284,6 +284,7 @@ window.SANDIES = {
       size: "~30–40 lb adult estimate",
       image: "assets/pups/litter2/profile/ginger.jpg?v=p1003",
       status: "available",
+      gallery: [1, 2, 3, 4, 5, 6, 7].map((n) => `assets/pups/litter2/gallery/ginger/0${n}.jpg`),
       blurb:
         "Warm apricot curls with bright eyes and a playful spark.",
     },
