@@ -308,6 +308,7 @@ window.SANDIES = {
       size: "~30–40 lb adult estimate",
       image: "assets/pups/litter2/profile/meadow.jpg?v=p1003",
       status: "available",
+      gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/meadow/0${n}.jpg`),
       blurb:
         "Warm apricot curls and a calm, grounded little face.",
     },
