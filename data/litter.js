@@ -39,7 +39,7 @@ window.SANDIES = {
    * here (e.g. from Square Online Checkout). Leave "" until it exists —
    * Reserve buttons fall back to the reservation section + call/text.
    */
-  goHome: "Goes home Oct 31",
+  goHome: "end of October",
   square: {
     reserveUrl: "https://square.link/u/qB7DZKT4?src=embed",
   },

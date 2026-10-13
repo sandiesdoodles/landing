@@ -23,7 +23,7 @@
   const squareUrl = (data.square && data.square.reserveUrl) || "";
   const isReserved = (pup) => pup.status === "reserved" || pup.status === "sold";
   const statusLabel = (pup) =>
-    pup.status === "sold" ? "Sold" : pup.status === "reserved" ? "Reserved" : data.goHome ? `Available · ${data.goHome}` : "Available";
+    pup.status === "sold" ? "Sold" : pup.status === "reserved" ? "Reserved" : data.goHome ? `Available ${data.goHome}` : "Available";
   const reserveAttrs = (pupName = "") =>
     squareUrl
       ? `href="${squareUrl}" target="_blank" rel="noopener noreferrer" class="puppy-reservation-cta" data-track="reserve_click" data-pup-name="${pupName}"`
