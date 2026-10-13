@@ -285,7 +285,7 @@ window.SANDIES = {
       size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/ginger.jpg?v=p1003",
       status: "available",
-      gallery: [1, 2, 3, 4, 5, 6, 7].map((n) => `assets/pups/litter2/gallery/ginger/0${n}.jpg`),
+      gallery: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `assets/pups/litter2/gallery/ginger/0${n}.jpg`),
       blurb:
         "Warm apricot curls with bright eyes and a playful spark.",
     },
@@ -297,7 +297,7 @@ window.SANDIES = {
       size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/lotus.jpg?v=p1003",
       status: "available",
-      gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/lotus/0${n}.jpg?v=3`),
+      gallery: [1, 2, 3, 4, 5, 6].map((n) => `assets/pups/litter2/gallery/lotus/0${n}.jpg?v=3`),
       blurb:
         "Warm apricot curls, cream muzzle, and a soft curious head tilt.",
     },
@@ -309,7 +309,7 @@ window.SANDIES = {
       size: "~25–35 lb adult estimate",
       image: "assets/pups/litter2/profile/meadow.jpg?v=p1003",
       status: "available",
-      gallery: [1, 2, 3, 4, 5].map((n) => `assets/pups/litter2/gallery/meadow/0${n}.jpg`),
+      gallery: [1, 2, 3, 4, 5, 6].map((n) => `assets/pups/litter2/gallery/meadow/0${n}.jpg`),
       blurb:
         "Warm apricot curls and a calm, grounded little face.",
     },
